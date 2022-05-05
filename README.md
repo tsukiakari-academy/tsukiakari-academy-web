@@ -6,11 +6,11 @@ Repository for Tsukiakari Academy
 1. Fork Repository ini
 2. Clone Repository hasil fork anda
 ```sh
-git clone https://github.com/{username-anda}/portal-primakara.git
+git clone https://github.com/{username-anda}/tsukiakari-academy-web
 ```
 3. Tambahkan upstream pada hasil clone tersebut
 ```sh
-git remote add upstream https://github.com/primakara-developers/portal-primakara.git
+git remote add upstream https://github.com/tsukiakari-academy/tsukiakari-academy-web.git
 ```
 4. Install dependencies
 ```sh
