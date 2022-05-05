@@ -1,0 +1,22 @@
+$font-stack: Raleway, sans-serif;
+$primary-color: #333;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-stack;
+    color: $primary-color;
+}
+
+.dummy-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__title {
+        font-size: 84px;
+    }
+}
