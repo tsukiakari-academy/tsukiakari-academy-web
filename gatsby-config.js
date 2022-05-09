@@ -26,7 +26,8 @@ module.exports = {
         alias: {
           "@components": path.resolve(__dirname, 'src/components'),
           "@pages": path.resolve(__dirname, 'src/pages'),
-          "@scss": path.resolve(__dirname, 'src/scss')
+          "@scss": path.resolve(__dirname, 'src/scss'),
+          "@images": path.resolve(__dirname, 'src/images')
         },
         extensions: [
           "js", "scss"
