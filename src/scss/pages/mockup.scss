@@ -8,10 +8,12 @@ body {
 }
 
 .background {
+    width: 1400px;
+    margin: auto;
+
     &__img {
         display: block;
         height: auto;
         margin: auto;
-        width: 100%;
     }
 }
