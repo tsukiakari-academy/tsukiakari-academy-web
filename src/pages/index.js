@@ -12,8 +12,14 @@ const IndexPage = () => {
           <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet"></link>
       </Helmet>
 
-      <div className="dummy-container">
+      {/* <div className="dummy-container">
         <div className="dummy-container__title">
+          Tsukiakari Academy
+        </div>
+      </div> */}
+
+      <div className="banner">
+        <div className="banner__title">
           Tsukiakari Academy
         </div>
       </div>

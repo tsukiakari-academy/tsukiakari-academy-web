@@ -10,11 +10,17 @@ body {
     color: $primary-color;
 }
 
-.dummy-container{
-    height: 100vh;
+.container {
+    @media (min-width: 1400px) {
+      max-width: 80%;
+    }
+  }
+
+.banner {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     
     &__title {
         font-size: 84px;
