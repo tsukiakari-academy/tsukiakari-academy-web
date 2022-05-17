@@ -14,12 +14,12 @@ git remote add upstream https://github.com/tsukiakari-academy/tsukiakari-academy
 ```
 4. Install dependencies
 ```sh
-npm install
+yarn install or npm install
 ```
 
 5. Jalankan projek (akan berjalan di localhost:8000)
 ```sh
-npm run develop
+yarn run dev or npm run dev
 ```
 
 ### Berikut langkah-langkah yang wajib dilakukan dalam proses kontribusi
