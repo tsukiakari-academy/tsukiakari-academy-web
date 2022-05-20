@@ -1,0 +1,44 @@
+/*
+ * This is where we define styles that will be used in multiple pages.
+ *
+*/
+
+/* Loads all custom fonts */
+@import "fonts";
+
+/* Load color pallete */
+@import "pallete";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Actual global styling starts here */
+body {
+  color: $pure-black;
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  font-family: "Rubik", sans-serif;
+}
+
+// remove this later if there's content available
+.banner {
+  background-color: $grey-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+
+  &__title {
+    font-size: 84px;
+  }
+}
