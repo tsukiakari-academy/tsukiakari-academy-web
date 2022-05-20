@@ -1,5 +1,5 @@
 # Tsukiakari Academy
-Repository for Tsukiakari Academy
+Official Repository for Tsukiakari Academy
 
 
 ### Ingin kontribusi? Berikut langkahnya!
