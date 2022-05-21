@@ -29,16 +29,3 @@ a,
 button {
   font-family: "Rubik", sans-serif;
 }
-
-// remove this later if there's content available
-.banner {
-  background-color: $grey-dark;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200vh;
-
-  &__title {
-    font-size: 84px;
-  }
-}

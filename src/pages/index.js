@@ -2,6 +2,7 @@ import * as React from "react";
 import {Helmet} from "react-helmet";
 
 import { Layout } from "@components"
+import { Banner } from "./home/index"
 
 import "@scss/app.scss"
 
@@ -15,11 +16,7 @@ const IndexPage = () => {
       </Helmet>
 
       <Layout color="#656FD4">
-        <div className="banner">
-          <div className="banner__title">
-            Tsukiakari Academy
-          </div>
-        </div>
+        <Banner />
       </Layout>
     </>
   );
