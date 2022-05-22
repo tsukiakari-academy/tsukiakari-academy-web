@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Header } from "@components"
+import { Header, Footer } from "@components"
 
 export const Layout = ({ color, children }) => {
   return (
@@ -9,7 +9,7 @@ export const Layout = ({ color, children }) => {
         <main className="main-content">
           {children}
         </main>
-      {/* footer */}
+      <Footer />
     </>
   )
 }

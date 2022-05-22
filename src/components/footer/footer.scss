@@ -1,0 +1,249 @@
+@import "@scss/pallete";
+
+$transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
+
+.footer {
+  &__main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__main-section {
+    width: 40%;
+  }
+
+  &__section {
+
+  }
+
+  &__logo {
+    width: 224px;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 30px;
+    margin: 0;
+    margin-top: -25px;
+  }
+
+  &__contact {
+    align-items: center;
+    display: flex;
+    line-height: 30px;
+    margin-top: 25px;
+  }
+
+  &__contact-title {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__contact-divider {
+    background-color: $primary;
+    height: 1px;
+    margin: 0 15px;
+    width: 20px;
+  }
+
+  &__contact-email {
+    color: $pure-black;
+    font-size: 16px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.2s $transition-timing;
+
+    &:hover {
+      color: $secondary;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &::after {
+      background-color: $secondary;
+      bottom: 2px;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.2s $transition-timing;
+      width: 100%;
+    }
+  }
+
+  &__section {
+    margin: 0;
+    margin-top: 90px;
+    padding: 0;
+  }
+
+  &__section-title {
+    color: $primary;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 10px;
+    line-height: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $pure-black;
+      font-size: 16px;
+      position: relative;
+      text-decoration: none;
+      transition: color 0.2s $transition-timing;
+
+      &:hover {
+        color: $secondary;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        background-color: $secondary;
+        bottom: 2px;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        transition: width 0.2s $transition-timing;
+        width: 0;
+      }
+    }
+  }
+
+  &__sub {
+    align-items: center;
+    border-top: 1px solid $grey-dark;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 40px 0;
+  }
+
+  &__sub-right {
+    align-items: center;
+    display: flex;
+  }
+
+  &__sub-item {
+    font-size: 16px;
+    margin: 0;
+
+    & + & {
+      margin-left: 30px;
+    }
+
+    span {
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .footer {
+    &__description,
+    &__contact-title,
+    &__contact-email {
+      font-size: 14px;
+    }
+
+    &__section-title {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      line-height: 25px;
+
+      a {
+        font-size: 14px;
+      }
+    }
+
+    &__sub-item {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .footer {
+    &__main {
+      flex-wrap: wrap;
+    }
+
+    &__main-section {
+      width: 100%;
+    }
+
+    &__section {
+      width: 50%;
+    }
+
+    &__sub {
+      flex-direction: column;
+    }
+
+    &__sub-right {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .footer {
+    &__description {
+      line-height: 35px;
+    }
+
+    &__contact {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    &__contact-title {
+      color: $primary;
+      font-weight: 700;
+    }
+
+    &__contact-divider {
+      display: none;
+    }
+
+    &__section {
+      margin-top: 55px;
+      width: 100%;
+    }
+
+    &__sub {
+      border-top: none;
+    }
+
+    &__sub-item {
+      font-size: 14px;
+    }
+  }
+}
