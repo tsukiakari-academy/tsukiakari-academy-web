@@ -1,0 +1,33 @@
+@import "@scss/pallete";
+
+.section-title {
+  color: $pure-white;
+  font-size: 48px;
+  margin: 0;
+  position: relative;
+  text-transform: uppercase;
+
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &__sub-title {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .section-title {
+    font-size: 36px;
+  }
+}

@@ -36,11 +36,15 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
     }
   }
 
+  .container {
+    position: initial;
+  }
+
   &__top-decoration {
     height: 10px;
-    left: 0;
+    left: -100vw;
     position: absolute;
-    right: 0;
+    right: -100vw;
     top: 0;
     transition: transform 0.2s $transition-timing;
   }

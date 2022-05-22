@@ -27,7 +27,8 @@ module.exports = {
           "@components": path.resolve(__dirname, 'src/components'),
           "@pages": path.resolve(__dirname, 'src/pages'),
           "@scss": path.resolve(__dirname, 'src/assets/scss'),
-          "@images": path.resolve(__dirname, 'src/assets/images')
+          "@images": path.resolve(__dirname, 'src/assets/images'),
+          "@utils": path.resolve(__dirname, 'src/utils')
         },
         extensions: [
           "js", "scss"

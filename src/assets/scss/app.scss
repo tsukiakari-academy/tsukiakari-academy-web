@@ -29,3 +29,29 @@ a,
 button {
   font-family: "Rubik", sans-serif;
 }
+
+.container {
+  position: relative;
+}
+
+// .main-content {
+//   padding-top: 85px;
+// }
+
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 840px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 1080px;
+  }
+}
