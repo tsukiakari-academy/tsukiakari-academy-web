@@ -72,11 +72,11 @@
 
     &::before {
       background-color: $shadow;
-      bottom: -100px;
       content: "";
-      height: 100px;
+      height: 200%;
       left: 50%;
       position: absolute;
+      top: 100%;
       transform: translateX(-50%);
       width: 2px;
     }
