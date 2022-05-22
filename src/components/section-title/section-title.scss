@@ -1,0 +1,60 @@
+@import "@scss/pallete";
+
+.section-title {
+  color: $pure-white;
+  font-size: 48px;
+  margin: 0;
+  position: relative;
+  text-transform: uppercase;
+
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.big {
+    .section-title {
+      &__sub-title {
+        font-size: 350px;
+        letter-spacing: 14px;
+      }
+    }
+  }
+
+  &__sub-title {
+    color: transparent;
+    bottom: -35px;
+    font-size: 250px;
+    font-family: "Bebas Neue", sans-serif;
+    left: 50%;
+    letter-spacing: 8px;
+    position: absolute;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    -webkit-text-stroke: 2px $pure-white;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .section-title {
+    font-size: 36px;
+
+    &.big {
+      .section-title__sub-title {
+        font-size: 250px;
+      }
+    }
+
+    &__sub-title {
+      bottom: -15px;
+      font-size: 150px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "@scss/pallete";
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  span {
+    border: 2px solid $pure-white;
+    border-radius: 8px;
+    height: 10px;
+    justify-content: center;
+    margin: 0 5px;
+    width: 55px;
+
+    &.active {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+}

@@ -6,7 +6,9 @@ export const Layout = ({ color, children }) => {
   return (
     <>
       <Header color={color} />
-        {children}
+        <main className="main-content">
+          {children}
+        </main>
       {/* footer */}
     </>
   )

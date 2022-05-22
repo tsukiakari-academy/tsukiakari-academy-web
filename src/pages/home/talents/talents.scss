@@ -1,0 +1,217 @@
+@import "@scss/pallete";
+
+$transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
+
+.talents {
+  background-color: rgba($secondary, 0.9);
+  background-image: url("@images/shadow-people.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 235px;
+  padding-top: 200px;
+
+  .swiper-container {
+    left: 0;
+    position: absolute;
+    right: 50%;
+    top: -80px;
+    z-index: 10;
+  }
+
+  &__section-title {
+    margin-top: 215px;
+  }
+
+  &__section-number {
+    bottom: -12px;
+    color: $pure-white;
+    font-family: "Bebas Neue";
+    font-size: 128px;
+    font-weight: 700;
+    left: 8px;
+    letter-spacing: 6px;
+    position: absolute;
+    z-index: 5;
+  }
+
+  &__slider {
+    margin-top: 100px;
+    position: relative;
+  }
+
+  &__image-wrapper {
+    height: 0;
+    padding-top: 128.5%;
+    position: relative;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__content {
+    color: $pure-white;
+    margin-left: auto;
+    padding: 0 25px 0 35px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+
+    &::before {
+      background-color: rgba($grey-dark, 0.15);
+      bottom: 25px;
+      content: "";
+      left: -100vw;
+      right: -100vw;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  &__title-wrapper {
+    padding-top: 35px;
+    transition: opacity 0.2s $transition-timing;
+
+    &.transition {
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    font-size: 72px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__sub-title {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 24px;
+    padding-left: 25px;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+      background-color: $pure-white;
+      content: "";
+      height: 15px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+    }
+  }
+
+  &__biography {
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0;
+    margin-top: 25px;
+    padding: 25px 15px;
+    position: relative;
+    transition: opacity 0.2s $transition-timing;
+
+    &.transition {
+      opacity: 0;
+    }
+
+    &::before,
+    &::after {
+      background-image: url("@images/icons/arrow-line.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      height: 15px;
+      position: absolute;
+      width: 15px;
+    }
+
+    &::before {
+      left: 0;
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__navigation {
+    align-items: center;
+    display: flex;
+    margin-top: 50px;
+
+    .previous,
+    .next {
+      align-items: center;
+      background-color: $pure-white;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      height: 65px;
+      justify-content: center;
+      width: 65px;
+    }
+
+    .next {
+      margin-left: 35px;
+
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .talents {
+    padding-bottom: 135px;
+    padding-top: 100px;
+
+    &__section-title {
+      margin-top: 165px;
+    }
+
+    &__section-number {
+      bottom: -4px;
+      font-size: 96px;
+    }
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__sub-title {
+      font-size: 14px;
+    }
+
+    &__biography {
+      font-size: 14px;
+    }
+
+    &__navigation {
+      margin-top: 25px;
+
+      .previous,
+      .next {
+        height: 55px;
+        width: 55px;
+      }
+
+      .next {
+        margin-left: 25px;
+      }
+    }
+  }
+}
