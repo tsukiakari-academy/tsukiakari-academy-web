@@ -23,7 +23,7 @@
   position: relative;
 
   &::before {
-    background-image: url('@images/banner/circle-ornament.svg');
+    background-image: url('@images/icons/circle-ornament.svg');
     background-repeat: no-repeat;
     content: "";
     height: 307px;
@@ -104,5 +104,6 @@
     animation-duration: 1s;
     animation-iteration-count: infinite;
     position: relative;
+    transform: rotate(-90deg);
   }
 }
