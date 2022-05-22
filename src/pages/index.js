@@ -2,7 +2,9 @@ import * as React from "react";
 import {Helmet} from "react-helmet";
 
 import { Layout } from "@components"
-import { About, Talents } from "./home/index"
+
+import About from "./home/about/about"
+import Talents from "./home/talents/talents"
 
 import "@scss/app.scss"
 

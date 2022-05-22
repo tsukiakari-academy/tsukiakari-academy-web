@@ -1,16 +1,15 @@
 import React, { useRef, useState } from "react"
 import SwiperCore, { Autoplay, Navigation } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/swiper-bundle.min.css"
 
 import { talents } from "./talents-data"
 import { arrow } from "@images"
 import { SectionTitle } from "@components"
-import { Pagination } from "./pagination/pagination"
+import Pagination from "./pagination/pagination"
 
 import "./talents.scss"
 
-export const Talents = () => {
+const Talents = () => {
   const titleEl = useRef()
   const bioEl = useRef()
 
@@ -97,3 +96,5 @@ export const Talents = () => {
     </section>
   )
 }
+
+export default Talents

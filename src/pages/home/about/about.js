@@ -5,7 +5,7 @@ import { SectionTitle } from "@components"
 
 import "./about.scss"
 
-export const About = () => {
+const About = () => {
   return (
     <section className="home-about">
       <div className="home-about__image">
@@ -36,13 +36,13 @@ export const About = () => {
           <div className="home-about__socmed">
             <p className="home-about__socmed-title">Follow us on</p>
 
-            <a href="https://www.youtube.com/" className="home-about__socmed-image" target="_blank">
+            <a href="https://www.youtube.com/" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
               <img src={youtube} alt="Youtube" />
             </a>
-            <a href="https://www.twitter.com/" className="home-about__socmed-image" target="_blank">
+            <a href="https://www.twitter.com/" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
               <img src={twitter} alt="Twitter" />
             </a>
-            <a href="https://www.facebook.com/" className="home-about__socmed-image" target="_blank">
+            <a href="https://www.facebook.com/" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
               <img src={facebook} alt="Facebook" />
             </a>
           </div>
@@ -51,3 +51,5 @@ export const About = () => {
     </section>
   )
 }
+
+export default About

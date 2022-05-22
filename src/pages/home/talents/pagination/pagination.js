@@ -4,7 +4,7 @@ import { generateClassNames } from "@utils"
 
 import "./pagination.scss"
 
-export const Pagination = ({ total, active, extraClass }) => {
+const Pagination = ({ total, active, extraClass }) => {
   const indicators = [...Array(total).keys()]
 
   return (
@@ -24,3 +24,5 @@ export const Pagination = ({ total, active, extraClass }) => {
     </div>
   )
 }
+
+export default Pagination
