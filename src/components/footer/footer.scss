@@ -5,15 +5,12 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
 .footer {
   &__main {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
   &__main-section {
     width: 40%;
-  }
-
-  &__section {
-
   }
 
   &__logo {
@@ -190,10 +187,6 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
 
 @media only screen and (max-width: 991px) {
   .footer {
-    &__main {
-      flex-wrap: wrap;
-    }
-
     &__main-section {
       width: 100%;
     }
