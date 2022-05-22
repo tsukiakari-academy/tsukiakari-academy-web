@@ -2,12 +2,13 @@ import React, { useRef, useState } from "react"
 import SwiperCore, { Autoplay, Navigation } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { talents } from "./talents-data"
-import { arrow } from "@images"
+import { arrow, talentImages } from "@images"
 import { SectionTitle } from "@components"
 import Pagination from "./pagination/pagination"
 
 import "./talents.scss"
+
+const talents = require("./talents-data.json")
 
 const Talents = () => {
   const titleEl = useRef()
@@ -86,7 +87,7 @@ const Talents = () => {
             {talents.map((talent, index) => (
               <SwiperSlide key={index}>
                 <div className="talents__image-wrapper">
-                  <img src={talent.image} className="talents__image" />
+                  <img src={talentImages[index]} className="talents__image" alt={talent.name} />
                 </div>
               </SwiperSlide>
             ))}
