@@ -20,17 +20,18 @@
   }
 
   &__section-title {
-    span {
-      bottom: -85px;
-      left: -215px;
+    img {
+      bottom: 20px;
+      left: -17.5%;
       transform: none;
+      width: 95%;
     }
   }
 
   &__image {
     bottom: -5px;
     max-height: 760px;
-    max-width: 50%;
+    max-width: 52.75%;
     position: absolute;
     right: 0;
     z-index: 5;
@@ -167,18 +168,23 @@
     }
 
     &__section-title {
-      span {
-        bottom: -55px;
-        left: -65px;
+      img {
+        left: -11.75%;
+        width: 65%;
       }
     }
 
     &__content {
-      padding-top: 115px;
+      padding-top: 65px;
+
+      &::before {
+        left: -45px;
+      }
     }
 
     &__description {
       font-size: 14px;
+      line-height: 32px;
     }
 
     &__socmed {

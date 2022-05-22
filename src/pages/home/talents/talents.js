@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react"
-import SwiperCore, { Autoplay, Navigation } from "swiper"
+import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { arrow, talentImages } from "@images"
+import { talents as talentsTitle, talentImages } from "@images"
 import { SectionTitle } from "@components"
 import Pagination from "./pagination/pagination"
 
@@ -18,7 +18,7 @@ const Talents = () => {
   const [displayBio, setDisplayBio] = useState("")
   const [activeSlide, setActiveSlide] = useState(0)
 
-  SwiperCore.use([Autoplay, Navigation])
+  SwiperCore.use([Autoplay, Navigation, EffectFade])
 
   const SWIPER_PROPS = {
     onAfterInit: swiper => {
@@ -45,6 +45,7 @@ const Talents = () => {
       prevEl: ".talents__navigation .previous",
       nextEl: ".talents__navigation .next"
     },
+    effect: "fade",
     speed: 900,
     allowTouchMove: false,
     loop: true
@@ -58,12 +59,8 @@ const Talents = () => {
       </div>
       <p className="talents__biography" ref={bioEl}>{displayBio}</p>
       <div className="talents__navigation">
-        <div className="previous">
-          <img src={arrow} alt="previous navigation" />
-        </div>
-        <div className="next">
-          <img src={arrow} alt="next navigation" />
-        </div>
+        <div className="previous"></div>
+        <div className="next"></div>
       </div>
     </div>
   )
@@ -75,7 +72,7 @@ const Talents = () => {
         <SectionTitle
           align="center"
           title="Our Talents"
-          subTitle="Talents"
+          titleDecoration={talentsTitle}
           extraClass="talents__section-title"
         />
         <span className="talents__section-number">02</span>
