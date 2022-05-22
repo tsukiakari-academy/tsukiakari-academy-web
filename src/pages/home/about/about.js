@@ -1,6 +1,6 @@
 import React from "react"
 
-import { people, facebook, youtube, twitter } from "@images"
+import { about, people, facebook, youtube, twitter } from "@images"
 import { SectionTitle } from "@components"
 
 import "./about.scss"
@@ -23,7 +23,7 @@ const About = () => {
             align="left"
             size="big"
             title="Who are we?"
-            subTitle="About Us"
+            titleDecoration={about}
             extraClass="home-about__section-title"
           />
 
