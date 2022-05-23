@@ -58,7 +58,7 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
     transition: color 0.2s $transition-timing;
 
     &:hover {
-      color: $secondary;
+      color: $primary;
 
       &::after {
         transform: scaleX(1);
@@ -66,7 +66,7 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
     }
 
     &::after {
-      background-color: $secondary;
+      background-color: $primary;
       bottom: 2px;
       content: "";
       height: 1px;
@@ -110,7 +110,7 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
       transition: color 0.2s $transition-timing;
 
       &:hover {
-        color: $secondary;
+        color: $primary;
 
         &::after {
           width: 100%;
@@ -118,7 +118,7 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
       }
 
       &::after {
-        background-color: $secondary;
+        background-color: $primary;
         bottom: 2px;
         content: "";
         height: 1px;
