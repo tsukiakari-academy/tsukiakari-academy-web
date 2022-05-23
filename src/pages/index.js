@@ -3,6 +3,7 @@ import {Helmet} from "react-helmet";
 
 import { Layout } from "@components"
 
+import Banner from "./home/banner/banner"
 import About from "./home/about/about"
 import Talents from "./home/talents/talents"
 
@@ -17,6 +18,7 @@ const IndexPage = () => {
       </Helmet>
 
       <Layout color="#656FD4">
+        <Banner />
         <About />
         <Talents />
       </Layout>

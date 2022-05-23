@@ -7,6 +7,7 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 90px;
   }
 
   &__main-section {
@@ -27,7 +28,7 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
     font-size: 16px;
     line-height: 30px;
     margin: 0;
-    margin-top: -25px;
+    margin-top: 50px;
   }
 
   &__contact {
@@ -79,7 +80,7 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
 
   &__section {
     margin: 0;
-    margin-top: 90px;
+    margin-top: 30px;
     padding: 0;
   }
 
@@ -166,6 +167,10 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
       font-size: 14px;
     }
 
+    &__section {
+      margin-top: 55px;
+    }
+
     &__section-title {
       font-size: 16px;
       margin-bottom: 20px;
@@ -227,7 +232,6 @@ $transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
     }
 
     &__section {
-      margin-top: 55px;
       width: 100%;
     }
 
