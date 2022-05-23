@@ -90,11 +90,13 @@
   }
 
   &__caret-circle {
+    align-items: center;
     border: 2px solid $secondary;
     border-radius: 50%;
+    display: flex;
     height: 35px;
+    justify-content: center;
     margin: auto;
-    padding: 7px 9px;
     width: 35px;
 
   }
