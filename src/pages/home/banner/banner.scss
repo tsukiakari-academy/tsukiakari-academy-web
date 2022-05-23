@@ -1,0 +1,109 @@
+@import "@scss/pallete";
+
+@keyframes float {
+  0% {
+    top: -1px
+  }
+
+  50% {
+    top: 2px
+  }
+
+  100% {
+    top: -1px
+  }
+}
+
+.banner {
+  align-items: center;
+  background-color: $pure-white;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    background-image: url('@images/icons/circle-ornament.svg');
+    background-repeat: no-repeat;
+    content: "";
+    height: 307px;
+    left: 0;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 154px;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__btn-banner {
+    background-color: $secondary;
+    border: 0;
+    border-radius: 8px;
+    color: $pure-white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+
+    &:hover {
+      background-color: $primary
+    }
+  }
+
+  &__logo-wrapper {
+    margin-bottom: 60px;
+    margin-top: 10px;
+  }
+
+  &__logo {
+    max-width: 550px;
+  }
+
+  &__direction {
+    bottom: 10.7%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+
+    &::before {
+      background-color: $shadow;
+      content: "";
+      height: 200%;
+      left: 50%;
+      position: absolute;
+      top: 100%;
+      transform: translateX(-50%);
+      width: 2px;
+    }
+  }
+
+  &__text {
+    color: $secondary;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__caret-circle {
+    border: 2px solid $secondary;
+    border-radius: 50%;
+    height: 35px;
+    margin: auto;
+    padding: 7px 9px;
+    width: 35px;
+
+  }
+
+  &__caret-down {
+    animation-name: float;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    position: relative;
+    transform: rotate(-90deg);
+  }
+}
