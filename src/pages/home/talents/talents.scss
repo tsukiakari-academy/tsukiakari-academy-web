@@ -244,3 +244,98 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
     }
   }
 }
+
+@media only screen and (max-width: 991px) {
+  .talents {
+    padding-bottom: 135px;
+    padding-top: 150px;
+
+    .swiper-container {
+      margin: auto;
+      position: relative;
+      top: 0;
+      width: 50%;
+    }
+
+    &__section-title {
+      margin-top: 165px;
+    }
+
+    &__section-number {
+      bottom: -50px;
+      left: auto;
+      right: 0;
+    }
+
+    &__slider {
+      margin-top: 50px;
+      padding-top: 30px;
+
+      &::before {
+        background-color: rgba($grey-dark, 0.15);
+        bottom: 25px;
+        content: "";
+        left: -100vw;
+        right: -100vw;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    &__content {
+      padding: 0;
+      width: 100%;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &__title-wrapper {
+      padding-top: 5px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .talents {
+    padding-bottom: 135px;
+    padding-top: 100px;
+
+    &__section-title {
+      margin-top: 165px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__section-number {
+      bottom: -25px;
+      font-size: 80px;
+    }
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__sub-title,
+    &__biography {
+      font-size: 14px;
+    }
+
+    &__navigation {
+      margin-top: 25px;
+
+      .previous,
+      .next {
+        height: 55px;
+        width: 55px;
+      }
+
+      .next {
+        margin-left: 25px;
+      }
+    }
+  }
+}

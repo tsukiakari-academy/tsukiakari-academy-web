@@ -51,6 +51,12 @@ const Talents = () => {
     loop: true
   }
 
+  const renderSectionNumber = () => {
+    if (activeSlide + 1 < 10) return `0${activeSlide + 1}`
+
+    return activeSlide + 1
+  }
+
   const renderContentDetails = () => (
     <div className="talents__content">
       <div className="talents__title-wrapper" ref={titleEl}>
@@ -75,11 +81,9 @@ const Talents = () => {
           titleDecoration={talentsTitle}
           extraClass="talents__section-title"
         />
-        <span className="talents__section-number">02</span>
+        <span className="talents__section-number">{renderSectionNumber()}</span>
 
         <div className="talents__slider">
-          {renderContentDetails()}
-
           <Swiper {...SWIPER_PROPS}>
             {talents.map((talent, index) => (
               <SwiperSlide key={index}>
@@ -89,6 +93,8 @@ const Talents = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {renderContentDetails()}
         </div>
       </div>
     </section>

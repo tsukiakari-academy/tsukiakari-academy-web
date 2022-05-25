@@ -149,6 +149,7 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .home-about {
+    border-top-right-radius: 25px;
     padding-top: 105px;
 
     &::before {
@@ -180,6 +181,82 @@
       &::before {
         left: -45px;
       }
+    }
+
+    &__description {
+      font-size: 14px;
+      line-height: 32px;
+    }
+
+    &__socmed {
+      padding: 0 40px;
+    }
+
+    &__socmed-title {
+      font-size: 14px;
+      margin-right: 30px;
+    }
+
+    &__socmed-image {
+      height: 25px;
+      margin-right: 15px;
+      width: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .home-about {
+    padding-top: 105px;
+
+    &__image {
+      display: none;
+    }
+
+    &__content {
+      margin-top: 60px;
+    }
+
+    &__section-title {
+      img {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &__description {
+      width: 100%;
+    }
+
+    &__socmed {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .home-about {
+    border-top-right-radius: 25px;
+
+    &::before {
+      height: 150px;
+      width: 150px;
+    }
+
+    &__pagination {
+      span {
+        margin-right: 15px;
+        width: 60px;
+
+        &.active {
+          width: 110px;
+        }
+      }
+    }
+
+    &__content {
+      padding-top: 115px;
     }
 
     &__description {
