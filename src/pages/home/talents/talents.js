@@ -3,8 +3,7 @@ import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import { talents as talentsTitle, talentImages } from "@images"
-import { SectionTitle } from "@components"
-import Pagination from "./pagination/pagination"
+import { SectionTitle, SectionPagination } from "@components"
 
 import "./talents.scss"
 
@@ -74,7 +73,11 @@ const Talents = () => {
   return (
     <section className="talents">
       <div className="container">
-        <Pagination total={talents.length} active={activeSlide + 1} />
+        <SectionPagination
+          total={talents.length}
+          totalActive={activeSlide + 1}
+          sliderPagination
+        />
         <SectionTitle
           align="center"
           title="Our Talents"

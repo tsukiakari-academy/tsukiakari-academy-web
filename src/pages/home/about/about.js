@@ -1,7 +1,7 @@
 import React from "react"
 
 import { about, people, facebook, youtube, twitter } from "@images"
-import { SectionTitle } from "@components"
+import { SectionTitle, SectionPagination } from "@components"
 
 import "./about.scss"
 
@@ -13,10 +13,7 @@ const About = () => {
       </div>
 
       <div className="container">
-        <div className="home-about__pagination">
-          <span className="active" />
-          <span />
-        </div>
+        <SectionPagination />
 
         <div className="home-about__content">
           <SectionTitle
