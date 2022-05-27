@@ -1,0 +1,72 @@
+@import "@scss/pallete";
+
+.section-pagination {
+  align-items: center;
+  display: flex;
+
+  &.slider-pagination {
+    justify-content: center;
+
+    span {
+      background-color: transparent;
+      border: 2px solid $pure-white;
+      margin-right: 10px;
+      width: 55px;
+
+      &.active {
+        background-color: $primary;
+        border-color: $primary;
+        width: 55px;
+      }
+    }
+  }
+
+  &.dark {
+    span {
+      background-color: $secondary;
+    }
+  }
+
+  span {
+    background-color: $pure-white;
+    border-radius: 8px;
+    height: 10px;
+    margin-right: 25px;
+    width: 85px;
+
+    &.active {
+      background-color: $primary;
+      width: 135px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .section-pagination {
+    span {
+      margin-right: 15px;
+      width: 60px;
+
+      &.active {
+        width: 110px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .section-pagination {
+    span {
+      margin-right: 15px;
+      width: 60px;
+
+      &.active {
+        width: 110px;
+      }
+    }
+  }
+}
