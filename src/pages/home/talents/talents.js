@@ -3,7 +3,7 @@ import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import { talents as talentsTitle, talentImages } from "@images"
-import { SectionTitle, SectionPagination } from "@components"
+import { SectionTitle, SectionPagination, SliderNavigation } from "@components"
 
 import "./talents.scss"
 
@@ -41,8 +41,8 @@ const Talents = () => {
       bioEl.current.classList.remove("transition")
     },
     navigation: {
-      prevEl: ".talents__navigation .previous",
-      nextEl: ".talents__navigation .next"
+      prevEl: ".talents__navigation .slider-navigation__prev",
+      nextEl: ".talents__navigation .slider-navigation__next"
     },
     effect: "fade",
     speed: 900,
@@ -63,10 +63,7 @@ const Talents = () => {
         <p className="talents__sub-title">Biography</p>
       </div>
       <p className="talents__biography" ref={bioEl}>{displayBio}</p>
-      <div className="talents__navigation">
-        <div className="previous"></div>
-        <div className="next"></div>
-      </div>
+      <SliderNavigation className="talents__navigation" />
     </div>
   )
 
