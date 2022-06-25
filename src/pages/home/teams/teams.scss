@@ -145,11 +145,7 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
 @media only screen and (max-width: 1199px) {
   .teams {
-    margin-top: 70px;
-
-    &__slider {
-      margin-top: 45px;
-    }
+    margin-top: 120px;
 
     &__navigation {
       margin-top: 60px;
@@ -159,6 +155,10 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
 @media only screen and (max-width: 575px) {
   .teams {
+    &__slider {
+      padding: 0 90px;
+    }
+
     &__image-wrapper {
       border-radius: 15px;
     }

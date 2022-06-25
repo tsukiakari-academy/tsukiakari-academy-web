@@ -15,8 +15,8 @@ export const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="footer__main">
+      <div className="footer__main">
+        <div className="container">
           <div className="footer__main-section">
             <div className="footer__logo">
               <img src={logoFull} alt="Footer Logo" />
@@ -26,51 +26,37 @@ export const Footer = () => {
               We are Tsukiakari Academy, a VTuber Team based on Academia theme
               a group of people who have one goal which is to help others VTubers
             </p>
+          </div>
 
-            <div className="footer__contact">
-              <p className="footer__contact-title">Contact us</p>
-              <span className="footer__contact-divider"></span>
+          <div className="footer__side-section">
+            <p className="footer__section-title">Social Media</p>
+
+            <ul className="footer__section">
+              <li className="footer__item">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+              </li>
+              <li className="footer__item">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              </li>
+              <li className="footer__item">
+                <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+              </li>
+              <li className="footer__item">
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Youtube</a>
+              </li>
+            </ul>
+
+            <p className="footer__section-title">Contact us</p>
+
+            <div className="footer__section">
               <a href="mailto:correctionisneeded@gmail.com" className="footer__contact-email">correctionisneeded@gmail.com</a>
             </div>
           </div>
-
-          <ul className="footer__section">
-            <li className="footer__item">
-              <a href="/about">About Us</a>
-            </li>
-            <li className="footer__item">
-              <a href="/faq">FAQ</a>
-            </li>
-            <li className="footer__item">
-              <a href="/comics">Comics</a>
-            </li>
-            <li className="footer__item">
-              <a href="/our-talents">Our Talents</a>
-            </li>
-            <li className="footer__item">
-              <a href="/our-staff">Our Staff</a>
-            </li>
-          </ul>
-
-          <ul className="footer__section">
-            <p className="footer__section-title">Social Media</p>
-
-            <li className="footer__item">
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
-            </li>
-            <li className="footer__item">
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </li>
-            <li className="footer__item">
-              <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
-            </li>
-            <li className="footer__item">
-              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Youtube</a>
-            </li>
-          </ul>
         </div>
+      </div>
 
-        <div className="footer__sub">
+      <div className="footer__sub">
+        <div className="container">
           <p className="footer__sub-item">&copy; Copyright {displayYear} <span>Tsukiakari Academy</span></p>
 
           <div className="footer__sub-right">
