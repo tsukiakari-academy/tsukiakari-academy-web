@@ -1,17 +1,14 @@
 import React from "react"
-import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { teams as ourTeams, teamImages } from "@images"
-import { SectionTitle, SectionPagination, SliderNavigation } from "@components"
+import { teamImages } from "@images"
+import { SectionTitle, SliderNavigation } from "@components"
 
 import "./teams.scss"
 
 const teams = require("./teams-data.json")
 
 const Teams = () => {
-  SwiperCore.use([Autoplay, Navigation, EffectFade])
-
   const SWIPER_PROPS = {
     navigation: {
       prevEl: ".teams__navigation .slider-navigation__prev",
@@ -20,7 +17,6 @@ const Teams = () => {
     speed: 900,
     slidesPerView: 2,
     spaceBetween: 15,
-    allowTouchMove: false,
     loop: true,
     breakpoints: {
       768: {
@@ -35,11 +31,9 @@ const Teams = () => {
   return (
     <section className="teams">
       <div className="container">
-        <SectionPagination darkActive />
-
         <SectionTitle
-          title="Best Team Ever"
-          titleDecoration={ourTeams}
+          title="Meet The Teams"
+          description="Meet the people behind the scenes - say hello."
           extraClass="teams__section-title"
         />
 
@@ -59,11 +53,7 @@ const Teams = () => {
           </Swiper>
         </div>
 
-        <div className="teams__navigation-wrapper">
-          <SliderNavigation darkNavigation className="teams__navigation" />
-
-          <a href="/teams" className="teams__team-details">More Detail</a>
-        </div>
+        <SliderNavigation darkNavigation className="teams__navigation" />
       </div>
     </section>
   )

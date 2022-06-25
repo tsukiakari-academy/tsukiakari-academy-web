@@ -1,30 +1,17 @@
-@import "@scss/pallete";
+@import "@scss/palette";
 
 $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
 .teams {
-  margin: 110px 0;
+  margin-top: 170px;
   overflow: hidden;
 
   .swiper-container {
     overflow: visible;
   }
 
-  &__section-title {
-    color: $secondary;
-    margin-top: 295px;
-    padding-left: 200px;
-
-    img {
-      bottom: 32px;
-      left: 0;
-      transform: none;
-      width: 80.75%;
-    }
-  }
-
   &__slider {
-    margin-top: 100px;
+    margin-top: 85px;
   }
 
   &__slide {
@@ -98,11 +85,11 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
     margin: 0;
   }
 
-  &__navigation-wrapper {
+  &__navigation {
     align-items: center;
     display: flex;
-    justify-content: space-between;
-    margin-top: 60px;
+    justify-content: center;
+    margin-top: 110px;
   }
 
   &__team-details {
@@ -137,77 +124,56 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .teams {
-    &__section-title {
-      margin-top: 195px;
-      padding-left: 150px;
-
-      img {
-        bottom: 24px;
-      }
-    }
-
-    &__slider {
-      margin-top: 80px;
-    }
-
     &__image-wrapper {
       border-radius: 20px;
     }
 
     &__content {
       border-radius: 20px;
-      padding: 15px 25px;
+      padding: 20px;
     }
 
     &__title {
-      font-size: 16px;
-    }
-
-    &__position {
       font-size: 14px;
     }
 
-    &__navigation-wrapper {
-      margin-top: 40px;
+    &__position {
+      font-size: 12px;
     }
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1199px) {
   .teams {
-    &__section-title {
-      margin-top: 145px;
-      padding-left: 100px;
-    }
+    margin-top: 70px;
 
     &__slider {
-      margin-top: 50px;
+      margin-top: 45px;
+    }
+
+    &__navigation {
+      margin-top: 60px;
     }
   }
 }
 
 @media only screen and (max-width: 575px) {
   .teams {
-    margin: 60px 0;
-
-    &__section-title {
-      margin-top: 95px;
-      padding-left: 0;
-      text-align: center;
-
-      img {
-        bottom: 82px;
-        width: 100%;
-      }
-    }
-
     &__image-wrapper {
       border-radius: 15px;
     }
 
     &__content {
       border-radius: 15px;
-      padding: 15px 20px;
+      padding: 15px;
+    }
+
+    &__title {
+      font-size: 14px;
+    }
+
+    &__position {
+      font-size: 12px;
     }
   }
 }

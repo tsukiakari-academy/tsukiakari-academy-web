@@ -21,8 +21,8 @@ const IndexPage = () => {
       <Layout color="#656FD4">
         <Banner />
         <About />
-        <Talents />
         <Teams />
+        <Talents />
       </Layout>
     </>
   );
