@@ -3,17 +3,12 @@
 $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
 
 .talents {
-  background-color: rgba($secondary, 0.9);
-  background-image: url("@images/shadow-people.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   overflow: hidden;
-  padding-bottom: 415px;
-  padding-top: 270px;
+  padding-bottom: 115px;
+  padding-top: 190px;
 
   .swiper-container {
-    left: 0;
+    left: 150px;
     position: absolute;
     right: 50%;
     top: -80px;
@@ -30,35 +25,28 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 1;
   }
 
-  &__section-title {
-    margin-top: 215px;
-
-    img {
-      bottom: 35px;
-      width: 61.5%;
-    }
-  }
-
   &__section-number {
-    bottom: -12px;
+    background-color: $primary;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     color: $pure-white;
     font-family: "Bebas Neue";
     font-size: 128px;
-    font-weight: 700;
     left: 8px;
-    letter-spacing: 6px;
+    padding: 150px 25px 0 25px;
     position: absolute;
+    top: 0;
     z-index: 5;
   }
 
   &__slider {
-    margin-top: 100px;
+    margin-top: 60px;
     position: relative;
   }
 
   &__image-wrapper {
     height: 0;
-    padding-top: 128.5%;
+    padding-top: 178.75%;
     position: relative;
   }
 
@@ -79,7 +67,7 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 1;
 
     &::before {
-      background-color: rgba($grey-dark, 0.15);
+      background-color: rgba($secondary, 0.9);
       bottom: 25px;
       content: "";
       left: -100vw;
@@ -91,7 +79,7 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   &__title-wrapper {
-    padding-top: 35px;
+    padding-top: 60px;
     transition: opacity 0.4s $transition-timing;
 
     &.transition {
@@ -100,36 +88,16 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   &__title {
-    font-size: 72px;
+    font-size: 48px;
     font-weight: 700;
     margin: 0;
-  }
-
-  &__sub-title {
-    font-size: 16px;
-    margin-bottom: 0;
-    margin-top: 24px;
-    padding-left: 25px;
-    position: relative;
-    text-transform: uppercase;
-
-    &::before {
-      background-color: $pure-white;
-      content: "";
-      height: 15px;
-      left: 0;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 15px;
-    }
   }
 
   &__biography {
     font-size: 16px;
     line-height: 25px;
     margin: 0;
-    margin-top: 25px;
+    margin-top: 60px;
     padding: 25px 15px;
     position: relative;
     transition: opacity 0.4s $transition-timing;
@@ -145,6 +113,7 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
       background-repeat: no-repeat;
       background-size: cover;
       content: "";
+      filter: brightness(0) invert(1);
       height: 15px;
       position: absolute;
       width: 15px;
@@ -163,48 +132,46 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   &__navigation {
-    margin-top: 50px;
+    margin-top: 65px;
+
+    div {
+      box-shadow: 0px 5px 15px 0px rgba($pure-black, 0.4);
+    }
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .talents {
-    padding-bottom: 215px;
-    padding-top: 170px;
+    padding-bottom: 65px;
+    padding-top: 140px;
 
-    &__section-title {
-      margin-top: 165px;
-
-      img {
-        bottom: 25px;
-      }
+    .swiper-container {
+      left: 50px;
     }
 
     &__section-number {
-      bottom: -4px;
       font-size: 96px;
     }
 
     &__title {
-      font-size: 48px;
-    }
-
-    &__sub-title {
-      font-size: 14px;
+      font-size: 36px;
+      padding-top: 40px;
     }
 
     &__biography {
       font-size: 14px;
+      margin-top: 40px;
     }
 
     &__navigation {
-      margin-top: 25px;
+      margin-top: 45px;
     }
   }
 }
 
 @media only screen and (max-width: 991px) {
   .talents {
+    display: none;
     padding-bottom: 165px;
     padding-top: 120px;
 
