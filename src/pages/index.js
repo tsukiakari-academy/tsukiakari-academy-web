@@ -15,10 +15,10 @@ const IndexPage = () => {
   return (
     <>
       <Helmet>
-          <title>Tsukiakari Academy</title>
+        <title>Tsukiakari Academy</title>
       </Helmet>
 
-      <Layout color="#656FD4">
+      <Layout color="#1c2742">
         <Banner />
         <About />
         <Teams />
