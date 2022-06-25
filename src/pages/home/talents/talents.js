@@ -3,8 +3,7 @@ import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import { talents as talentsTitle, talentImages } from "@images"
-import { SectionTitle } from "@components"
-import Pagination from "./pagination/pagination"
+import { SectionTitle, SectionPagination, SliderNavigation } from "@components"
 
 import "./talents.scss"
 
@@ -42,13 +41,19 @@ const Talents = () => {
       bioEl.current.classList.remove("transition")
     },
     navigation: {
-      prevEl: ".talents__navigation .previous",
-      nextEl: ".talents__navigation .next"
+      prevEl: ".talents__navigation .slider-navigation__prev",
+      nextEl: ".talents__navigation .slider-navigation__next"
     },
     effect: "fade",
     speed: 900,
     allowTouchMove: false,
     loop: true
+  }
+
+  const renderSectionNumber = () => {
+    if (activeSlide + 1 < 10) return `0${activeSlide + 1}`
+
+    return activeSlide + 1
   }
 
   const renderContentDetails = () => (
@@ -58,28 +63,27 @@ const Talents = () => {
         <p className="talents__sub-title">Biography</p>
       </div>
       <p className="talents__biography" ref={bioEl}>{displayBio}</p>
-      <div className="talents__navigation">
-        <div className="previous"></div>
-        <div className="next"></div>
-      </div>
+      <SliderNavigation className="talents__navigation" />
     </div>
   )
 
   return (
     <section className="talents">
       <div className="container">
-        <Pagination total={talents.length} active={activeSlide + 1} />
+        <SectionPagination
+          total={talents.length}
+          totalActive={activeSlide + 1}
+          sliderPagination
+        />
         <SectionTitle
           align="center"
           title="Our Talents"
           titleDecoration={talentsTitle}
           extraClass="talents__section-title"
         />
-        <span className="talents__section-number">02</span>
+        <span className="talents__section-number">{renderSectionNumber()}</span>
 
         <div className="talents__slider">
-          {renderContentDetails()}
-
           <Swiper {...SWIPER_PROPS}>
             {talents.map((talent, index) => (
               <SwiperSlide key={index}>
@@ -89,6 +93,8 @@ const Talents = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {renderContentDetails()}
         </div>
       </div>
     </section>

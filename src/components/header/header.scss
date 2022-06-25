@@ -1,10 +1,10 @@
-@import "@scss/pallete";
+@import "@scss/palette";
 
 $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
 .header {
   background-color: $pure-white;
-  box-shadow: 0px 2px 10px 0px rgba($shadow, 0.15);
+  box-shadow: 0px 2px 10px 0px rgba($secondary, 0.15);
   left: 0;
   position: fixed;
   right: 0;

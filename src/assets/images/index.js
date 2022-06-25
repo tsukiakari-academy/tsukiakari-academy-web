@@ -12,6 +12,7 @@ import logo from "./logo.png"
 export * from "./icons"
 export * from "./titles"
 export * from "./talents"
+export * from "./teams"
 
 export {
   logo,
