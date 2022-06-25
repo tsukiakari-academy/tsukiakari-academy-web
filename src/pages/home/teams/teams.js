@@ -15,8 +15,9 @@ const Teams = () => {
       nextEl: ".teams__navigation .slider-navigation__next"
     },
     speed: 900,
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 15,
+    allowTouchMove: false,
     loop: true,
     breakpoints: {
       768: {
