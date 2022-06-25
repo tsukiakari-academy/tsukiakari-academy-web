@@ -1,4 +1,5 @@
 import React from "react"
+import SwiperCore, { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import { teamImages } from "@images"
@@ -9,6 +10,8 @@ import "./teams.scss"
 const teams = require("./teams-data.json")
 
 const Teams = () => {
+  SwiperCore.use([Navigation])
+
   const SWIPER_PROPS = {
     navigation: {
       prevEl: ".teams__navigation .slider-navigation__prev",
