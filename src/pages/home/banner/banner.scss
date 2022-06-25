@@ -1,4 +1,4 @@
-@import "@scss/pallete";
+@import "@scss/palette";
 
 @keyframes float {
   0% {
@@ -71,7 +71,7 @@
     transform: translateX(-50%);
 
     &::before {
-      background-color: $shadow;
+      background-color: $secondary;
       content: "";
       height: 200%;
       left: 50%;
