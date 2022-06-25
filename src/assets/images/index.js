@@ -4,6 +4,7 @@
 import logoFull from "./logo-full.png"
 import shadowPeople from "./shadow-people.png"
 import people from "./people.png"
+import peopleSmall from "./people-small.png"
 import logo from "./logo.png"
 
 /**
@@ -18,5 +19,6 @@ export {
   logo,
   logoFull,
   shadowPeople,
-  people
+  people,
+  peopleSmall
 }

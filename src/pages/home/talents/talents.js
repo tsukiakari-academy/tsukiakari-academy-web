@@ -60,7 +60,6 @@ const Talents = () => {
     <div className="talents__content">
       <div className="talents__title-wrapper" ref={titleEl}>
         <p className="talents__title">{displayName}</p>
-        <p className="talents__sub-title">Biography</p>
       </div>
       <p className="talents__biography" ref={bioEl}>{displayBio}</p>
       <SliderNavigation className="talents__navigation" />
@@ -70,20 +69,15 @@ const Talents = () => {
   return (
     <section className="talents">
       <div className="container">
-        <SectionPagination
-          total={talents.length}
-          totalActive={activeSlide + 1}
-          sliderPagination
-        />
         <SectionTitle
-          align="center"
           title="Our Talents"
-          titleDecoration={talentsTitle}
+          description="Get to know our beloved talents"
           extraClass="talents__section-title"
         />
-        <span className="talents__section-number">{renderSectionNumber()}</span>
 
         <div className="talents__slider">
+          <span className="talents__section-number">{renderSectionNumber()}</span>
+
           <Swiper {...SWIPER_PROPS}>
             {talents.map((talent, index) => (
               <SwiperSlide key={index}>
