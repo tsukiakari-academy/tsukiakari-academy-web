@@ -2,34 +2,16 @@
 
 .home-about {
   background-color: rgba($secondary, 0.9);
-  border-top-right-radius: 50px;
-  overflow: hidden;
-  padding-top: 155px;
+  border-top-left-radius: 50px;
+  padding: 105px 0 90px 0;
   position: relative;
 
-  &::before {
-    background-color: $primary;
-    border-radius: 50%;
-    content: "";
-    height: 200px;
-    left: 50%;
-    position: absolute;
-    top: 0;
-    transform: translate(-50%, -50%);
-    width: 200px;
-  }
-
   &__section-title {
-    img {
-      bottom: 20px;
-      left: -17.5%;
-      transform: none;
-      width: 95%;
-    }
+    color: $pure-white;
   }
 
   &__image {
-    bottom: -5px;
+    bottom: 0;
     max-height: 760px;
     max-width: 52.75%;
     position: absolute;
@@ -43,29 +25,12 @@
     }
   }
 
-  &__content {
-    margin-top: 160px;
-    padding: 165px 0 50px 0;
-    position: relative;
-
-    &::before {
-      background-color: rgba($grey-dark, 0.15);
-      border-top-left-radius: 50px;
-      border-bottom-left-radius: 50px;
-      bottom: 0;
-      content: "";
-      left: -65px;
-      position: absolute;
-      right: -100vw;
-      top: 0;
-    }
-  }
-
   &__description {
     color: $pure-white;
     font-size: 16px;
     line-height: 38px;
     margin-bottom: 0;
+    margin-top: 45px;
     width: 55%;
   }
 
@@ -83,6 +48,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       content: "";
+      filter: brightness(0) invert(1);
       height: 15px;
       position: absolute;
       width: 15px;
@@ -127,32 +93,13 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .home-about {
-    border-top-right-radius: 25px;
-    padding-top: 105px;
-
-    &::before {
-      height: 150px;
-      width: 150px;
-    }
-
-    &__section-title {
-      img {
-        left: -11.75%;
-        width: 65%;
-      }
-    }
-
-    &__content {
-      padding-top: 65px;
-
-      &::before {
-        left: -45px;
-      }
-    }
+    border-top-left-radius: 25px;
+    padding: 65px 0 50px 0;
 
     &__description {
       font-size: 14px;
       line-height: 32px;
+      margin-top: 35px;
     }
 
     &__socmed {
@@ -174,21 +121,13 @@
 
 @media only screen and (max-width: 991px) {
   .home-about {
-    padding-top: 105px;
+    padding-bottom: 0;
 
     &__image {
-      display: none;
-    }
-
-    &__content {
-      margin-top: 60px;
-    }
-
-    &__section-title {
-      img {
-        left: 0;
-        width: 100%;
-      }
+      bottom: -4px;
+      margin: auto;
+      max-width: 75%;
+      position: relative;
     }
 
     &__description {
@@ -204,20 +143,17 @@
 
 @media only screen and (max-width: 575px) {
   .home-about {
-    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    padding-top: 65px;
 
-    &::before {
-      height: 150px;
-      width: 150px;
-    }
-
-    &__content {
-      padding-top: 115px;
+    &__image {
+      max-width: 100%;
     }
 
     &__description {
       font-size: 14px;
       line-height: 32px;
+      margin-top: 35px;
     }
 
     &__socmed {

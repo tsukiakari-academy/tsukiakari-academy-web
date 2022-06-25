@@ -1,26 +1,19 @@
 import React from "react"
 
-import { about, people, facebook, youtube, twitter } from "@images"
-import { SectionTitle, SectionPagination } from "@components"
+import { people, peopleSmall, facebook, youtube, twitter } from "@images"
+import { SectionTitle } from "@components"
 
 import "./about.scss"
 
 const About = () => {
   return (
     <section className="home-about">
-      <div className="home-about__image">
-        <img src={people} alt="People" />
-      </div>
-
       <div className="container">
-        <SectionPagination />
-
         <div className="home-about__content">
           <SectionTitle
             align="left"
-            size="big"
             title="Who are we?"
-            titleDecoration={about}
+            description="Eh? you guys really want to know?"
             extraClass="home-about__section-title"
           />
 
@@ -44,6 +37,11 @@ const About = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      <div className="home-about__image">
+        <img src={people} className="d-none d-lg-block" alt="People" />
+        <img src={peopleSmall} className="d-lg-none" alt="People" />
       </div>
     </section>
   )
