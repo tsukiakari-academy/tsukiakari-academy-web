@@ -4,11 +4,11 @@ import { generateClassNames } from "@utils"
 
 import "./section-title.scss"
 
-export const SectionTitle = ({ align, title, titleDecoration, extraClass }) => {
+export const SectionTitle = ({ align, title, description, extraClass }) => {
   return (
-    <h2 className={generateClassNames("section-title", [align, extraClass])}>
-      {title}
-      <img src={titleDecoration} className="section-title__sub-title" alt={title} />
-    </h2>
+    <div className={generateClassNames("section-title", [align, extraClass])}>
+      <h2 className="section-title__title">{title}</h2>
+      {description && <p className="section-title__desc">{description}</p>}
+    </div>
   )
 }

@@ -1,33 +1,64 @@
-@import "@scss/pallete";
+@import "@scss/palette";
 
 .section-title {
-  color: $pure-white;
-  font-size: 48px;
-  margin: 0;
-  position: relative;
-  text-transform: uppercase;
+  align-items: center;
+  color: $secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
 
   &.left {
-    text-align: left;
-  }
-
-  &.center {
-    text-align: center;
+    align-items: flex-start;
   }
 
   &.right {
-    text-align: right;
+    align-items: flex-end;
   }
 
-  &__sub-title {
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
+  &__title {
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+
+    &::after {
+      background-color: $primary;
+      bottom: 12px;
+      content: "";
+      height: 10px;
+      position: absolute;
+      right: -12px;
+      width: 10px;
+    }
+  }
+
+  &__desc {
+    font-size: 18px;
+    margin: 0;
+    margin-top: 10px;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .section-title {
-    font-size: 36px;
+    &__title {
+      font-size: 36px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .section-title {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
   }
 }
