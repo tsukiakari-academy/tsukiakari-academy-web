@@ -33,23 +33,23 @@ export const Footer = () => {
 
             <ul className="footer__section">
               <li className="footer__item">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.facebook.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Facebook</a>
               </li>
               <li className="footer__item">
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.instagram.com/tsukiakariac/" target="_blank" rel="noopener noreferrer">Instagram</a>
               </li>
               <li className="footer__item">
-                <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://twitter.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Twitter</a>
               </li>
               <li className="footer__item">
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Youtube</a>
+                <a href="https://www.youtube.com/watch?v=yqWX86uT5jM" target="_blank" rel="noopener noreferrer">Youtube</a>
               </li>
             </ul>
 
             <p className="footer__section-title">Contact us</p>
 
             <div className="footer__section">
-              <a href="mailto:correctionisneeded@gmail.com" className="footer__contact-email">correctionisneeded@gmail.com</a>
+              <a href="mailto:staff@tsukiakariacademy.com" className="footer__contact-email">staff@tsukiakariacademy.com</a>
             </div>
           </div>
         </div>

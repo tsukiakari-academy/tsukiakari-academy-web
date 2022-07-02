@@ -38,6 +38,11 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
   .container {
     position: initial;
+
+    @media screen and (max-width:500px) {
+      background-color: #fff;
+      padding: 0 16px 20px 16px;
+    }
   }
 
   &__top-decoration {
@@ -260,6 +265,14 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
     &__mobile-button {
       display: flex;
+    }
+  }
+}
+
+@media screen and (max-width:500px) {
+  .header {
+    &__logo-wrapper {
+      margin-left: 0;
     }
   }
 }
