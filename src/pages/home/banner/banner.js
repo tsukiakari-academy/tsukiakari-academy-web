@@ -11,7 +11,7 @@ const Banner = () => {
             <div className="banner__logo-wrapper">
               <img src={logoFull} alt="banner logo" className="banner__logo"/>
             </div>
-            <button className="banner__btn-banner">
+            <button onClick={() => window.scrollTo(0, 500)} className="banner__btn-banner">
               Take a Tour
             </button>
           </div>

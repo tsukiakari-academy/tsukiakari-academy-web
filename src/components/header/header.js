@@ -4,7 +4,7 @@ import { logo } from "@images"
 
 import "./header.scss"
 
-export const Header = ({ color }) => {
+export const Header = ({ color, linkClicked }) => {
   const headerEl = useRef()
   const mobileBtnEl = useRef()
 
@@ -53,10 +53,16 @@ export const Header = ({ color }) => {
           <nav className="header__navbar">
             <ul className="header__navbar-wrapper">
               <li className="header__navbar-list"><a href="/" className="header__navbar-item">FAQ</a></li>
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item">Talents</a></li>
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item">About Us</a></li>
+              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
+                event.preventDefault();
+                linkClicked('talents');
+              }}>Talents</a></li>
+              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
+                event.preventDefault();
+                linkClicked('about-us');
+              }}>About Us</a></li>
             </ul>
-            <button className="header__navbar-cta">Join Us</button>
+            <button onClick={() => window.location.href='https://bit.ly/TsukiakariApplicationForm'} className="header__navbar-cta">Join Us</button>
           </nav>
         </div>
 
