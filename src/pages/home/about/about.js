@@ -5,9 +5,17 @@ import { SectionTitle } from "@components"
 
 import "./about.scss"
 
-const About = () => {
+const AboutUsSection = React.forwardRef((props, ref) => {
   return (
-    <section className="home-about">
+    <section ref={ref} className="home-about">
+      {props.children}
+    </section>
+  )
+});
+
+const About = ({refProp}) => {
+  return (
+    <AboutUsSection ref={refProp}>
       <div className="container">
         <div className="home-about__content">
           <SectionTitle
@@ -26,13 +34,13 @@ const About = () => {
           <div className="home-about__socmed">
             <p className="home-about__socmed-title">Follow us on</p>
 
-            <a href="https://www.youtube.com/" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/watch?v=yqWX86uT5jM" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
               <img src={youtube} alt="Youtube" />
             </a>
-            <a href="https://www.twitter.com/" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/TsukiakariAC" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
               <img src={twitter} alt="Twitter" />
             </a>
-            <a href="https://www.facebook.com/" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/TsukiakariAC" className="home-about__socmed-image" target="_blank" rel="noopener noreferrer">
               <img src={facebook} alt="Facebook" />
             </a>
           </div>
@@ -43,7 +51,7 @@ const About = () => {
         <img src={people} className="d-none d-lg-block" alt="People" />
         <img src={peopleSmall} className="d-lg-none" alt="People" />
       </div>
-    </section>
+    </AboutUsSection>
   )
 }
 

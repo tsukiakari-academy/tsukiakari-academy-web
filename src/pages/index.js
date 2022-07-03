@@ -12,17 +12,37 @@ import "@scss/app.scss"
 
 // markup
 const IndexPage = () => {
+  const aboutUsSection = React.useRef(null);
+  const talentsSection = React.useRef(null);
+
+  const linkClicked = (link) => {
+    switch (link) {
+      case 'about-us':
+        if(aboutUsSection){
+          aboutUsSection.current.scrollIntoView({behavior: 'smooth'});
+        }
+        break;
+      case 'talents':
+        if(talentsSection){
+          talentsSection.current.scrollIntoView({behavior: 'smooth'})
+        }
+    
+      default:
+        break;
+    }
+  }
+
   return (
     <>
       <Helmet>
         <title>Tsukiakari Academy</title>
       </Helmet>
 
-      <Layout color="#1c2742">
+      <Layout color="#1c2742" linkClicked={(link) => linkClicked(link)}>
         <Banner />
-        <About />
+        <About refProp={aboutUsSection}/>
         <Teams />
-        <Talents />
+        <Talents refProp={talentsSection}/>
       </Layout>
     </>
   );

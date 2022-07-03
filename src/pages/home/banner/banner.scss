@@ -22,6 +22,12 @@
   justify-content: center;
   position: relative;
 
+  @media screen and (max-width: 550px) {
+   & {
+    padding: 0 60px;
+   }   
+  }
+
   &::before {
     background-image: url('@images/icons/circle-ornament.svg');
     background-repeat: no-repeat;
@@ -32,6 +38,12 @@
     top: 55%;
     transform: translateY(-50%);
     width: 154px;
+
+    @media screen and (max-width: 550px) {
+      & {
+        display: none;
+      }
+    }
   }
 
   &__content {
@@ -62,6 +74,13 @@
 
   &__logo {
     max-width: 550px;
+
+    @media screen and (max-width: 550px) {
+      & {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
   }
 
   &__direction {
