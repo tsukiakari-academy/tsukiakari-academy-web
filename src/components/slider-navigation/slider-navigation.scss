@@ -1,0 +1,82 @@
+@import "@scss/palette";
+
+.slider-navigation {
+  align-items: center;
+  display: flex;
+
+  &.dark {
+    .slider-navigation {
+      &__prev,
+      &__next {
+        background-color: $secondary;
+
+        &::before {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+
+  &__prev,
+  &__next {
+    align-items: center;
+    background-color: $pure-white;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    height: 65px;
+    justify-content: center;
+    width: 65px;
+
+    &::before {
+      background-image: url("@images/icons/arrow.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  &__next {
+    margin-left: 35px;
+
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .slider-navigation {
+    &__prev,
+    &__next {
+      height: 55px;
+      width: 55px;
+    }
+
+    &__next {
+      margin-left: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .slider-navigation {
+    &__prev,
+    &__next {
+      height: 50px;
+      width: 50px;
+
+      &::before {
+        height: 10px;
+        width: 10px;
+      }
+    }
+
+    &__next {
+      margin-left: 15px;
+    }
+  }
+}

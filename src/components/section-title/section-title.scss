@@ -1,0 +1,64 @@
+@import "@scss/palette";
+
+.section-title {
+  align-items: center;
+  color: $secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+
+  &.left {
+    align-items: flex-start;
+  }
+
+  &.right {
+    align-items: flex-end;
+  }
+
+  &__title {
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+
+    &::after {
+      background-color: $primary;
+      bottom: 10px;
+      content: "";
+      height: 10px;
+      position: absolute;
+      right: -12px;
+      width: 10px;
+    }
+  }
+
+  &__desc {
+    font-size: 18px;
+    margin: 0;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .section-title {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .section-title {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
+  }
+}

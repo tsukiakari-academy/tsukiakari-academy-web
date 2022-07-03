@@ -1,0 +1,256 @@
+@import "@scss/palette";
+
+$transition-timing: cubic-bezier(0.45, 0, 0.55, 1);
+
+.footer {
+  &__main {
+    padding-top: 70px;
+
+    .container {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__main-section {
+    width: 40%;
+  }
+
+  &__logo {
+    width: 224px;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    color: $secondary;
+    font-size: 16px;
+    line-height: 30px;
+    margin: 0;
+    margin-top: 40px;
+  }
+
+  &__contact {
+    align-items: center;
+    display: flex;
+    line-height: 30px;
+    margin-top: 25px;
+  }
+
+  &__contact-title {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__contact-email {
+    color: $secondary;
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.2s $transition-timing;
+
+    &:hover {
+      color: $primary;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &::after {
+      background-color: $primary;
+      bottom: 2px;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.2s $transition-timing;
+      width: 100%;
+    }
+  }
+
+  &__side-section {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__section {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  &__section-title {
+    color: $primary;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 0;
+    margin-top: 35px;
+    text-transform: uppercase;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin-right: 24px;
+    line-height: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      color: $secondary;
+      font-size: 18px;
+      position: relative;
+      text-decoration: none;
+      transition: color 0.2s $transition-timing;
+
+      &:hover {
+        color: $primary;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        background-color: $primary;
+        bottom: 2px;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        transition: width 0.2s $transition-timing;
+        width: 0;
+      }
+    }
+  }
+
+  &__sub {
+    background-color: $primary;
+    margin-top: 85px;
+    padding: 40px 0;
+
+    .container {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__sub-right {
+    align-items: center;
+    display: flex;
+  }
+
+  &__sub-item {
+    color: $pure-white;
+    font-size: 16px;
+    margin: 0;
+
+    & + & {
+      margin-left: 30px;
+    }
+
+    span {
+      color: $pure-white;
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .footer {
+    &__main-section {
+      width: 50%;
+    }
+
+    &__description,
+    &__contact-title,
+    &__contact-email,
+    &__sub-item  {
+      font-size: 16px;
+    }
+
+    &__section-title {
+      font-size: 16px;
+      margin-top: 25px;
+    }
+
+    &__item {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .footer {
+    &__main-section {
+      width: 100%;
+    }
+
+    &__side-section {
+      align-items: flex-start;
+      margin-top: 50px;
+      width: 100%;
+    }
+
+    &__section-title {
+      margin-top: 45px;
+    }
+
+    &__sub {
+      .container {
+        justify-content: center;
+      }
+    }
+
+    &__sub-right {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .footer {
+    &__description {
+      line-height: 35px;
+    }
+
+    &__section {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-right: 0;
+    }
+
+    &__item {
+      margin-bottom: 15px;
+      margin-right: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__sub {
+      padding: 30px 0;
+    }
+  }
+}

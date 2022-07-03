@@ -1,5 +1,5 @@
 # Tsukiakari Academy
-Repository for Tsukiakari Academy
+Repository for Tsukiakari Academy Project
 
 
 ### Ingin kontribusi? Berikut langkahnya!
@@ -12,12 +12,15 @@ git clone https://github.com/{username-anda}/tsukiakari-academy-web
 ```sh
 git remote add upstream https://github.com/tsukiakari-academy/tsukiakari-academy-web.git
 ```
-4. Install dependencies
+4. Pull perubahan pada development branch
+```sh
+git pull upstream origin development
+```
+5. Install dependencies
 ```sh
 yarn install or npm install
 ```
-
-5. Jalankan projek (akan berjalan di localhost:8000)
+6. Jalankan projek (akan berjalan di localhost:8000)
 ```sh
 yarn run dev or npm run dev
 ```
@@ -29,8 +32,8 @@ git pull upstream master
 ```
 2. Buat branch baru pada setiap fitur yang dikembangkan. Contoh:
 ```sh
-git branch feature/add-login // Contoh saat membuat branch untuk fitur baru
-git branch bug/fix-menu // Contoh saat membuat branch untuk fix bug
+git checkout -b feature/add-login // Contoh saat membuat branch untuk fitur baru
+git checkout -b bug/fix-menu // Contoh saat membuat branch untuk fix bug
 ```
 3. Setiap selesai, push ke repo hasil fork anda
 ```sh

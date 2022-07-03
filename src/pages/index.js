@@ -1,28 +1,49 @@
 import * as React from "react";
 import {Helmet} from "react-helmet";
 
+import { Layout } from "@components"
+
+import Banner from "./home/banner/banner"
+import About from "./home/about/about"
+import Talents from "./home/talents/talents"
+import Teams from "./home/teams/teams"
+
 import "@scss/app.scss"
 
 // markup
 const IndexPage = () => {
+  const aboutUsSection = React.useRef(null);
+  const talentsSection = React.useRef(null);
+
+  const linkClicked = (link) => {
+    switch (link) {
+      case 'about-us':
+        if(aboutUsSection){
+          aboutUsSection.current.scrollIntoView({behavior: 'smooth'});
+        }
+        break;
+      case 'talents':
+        if(talentsSection){
+          talentsSection.current.scrollIntoView({behavior: 'smooth'})
+        }
+    
+      default:
+        break;
+    }
+  }
+
   return (
     <>
       <Helmet>
-          <title>Tsukiakari Academy</title>
-          <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet"></link>
+        <title>Tsukiakari Academy</title>
       </Helmet>
 
-      {/* <div className="dummy-container">
-        <div className="dummy-container__title">
-          Tsukiakari Academy
-        </div>
-      </div> */}
-
-      <div className="banner">
-        <div className="banner__title">
-          Tsukiakari Academy
-        </div>
-      </div>
+      <Layout color="#1c2742" linkClicked={(link) => linkClicked(link)}>
+        <Banner />
+        <About refProp={aboutUsSection}/>
+        <Teams />
+        <Talents refProp={talentsSection}/>
+      </Layout>
     </>
   );
 }

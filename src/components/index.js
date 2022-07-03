@@ -1,0 +1,6 @@
+export * from "./header/header"
+export * from "./layout/layout"
+export * from "./section-title/section-title"
+export * from "./section-pagination/section-pagination"
+export * from "./slider-navigation/slider-navigation"
+export * from "./footer/footer"
