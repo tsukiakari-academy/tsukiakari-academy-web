@@ -25,7 +25,7 @@
   @media screen and (max-width: 550px) {
    & {
     padding: 0 60px;
-   }   
+   }
   }
 
   &::before {
@@ -91,8 +91,8 @@
 
     &::before {
       background-color: $secondary;
+      bottom: -120%;
       content: "";
-      height: 200%;
       left: 50%;
       position: absolute;
       top: 100%;

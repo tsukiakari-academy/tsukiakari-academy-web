@@ -1,0 +1,83 @@
+@import "@scss/palette";
+
+$transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+
+.accordion {
+  &__item {
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.active {
+      .accordion {
+        &__item-title::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__item-title {
+    align-items: center;
+    background-color: $primary;
+    border-radius: 8px;
+    color: $secondary;
+    display: flex;
+    font-size: 18px;
+    height: 60px;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: relative;
+
+    &::after {
+      border-bottom: 5px solid $secondary;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      content: "";
+      height: 0;
+      transition: transform 0.2s ease-in-out;
+      width: 0;
+    }
+  }
+
+  &__item-description {
+    align-items: center;
+    background-color: $pure-white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    font-size: 18px;
+    line-height: 1.8;
+    padding: 0 30px;
+    transition: all 0.4s $transition-timing;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .accordion {
+    &__item-title,
+    &__item-description {
+      font-size: 14px;
+      padding: 0 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .accordion {
+    &__item-title,
+    &__item-description {
+      font-size: 14px;
+      padding: 0 20px;
+    }
+  }
+}

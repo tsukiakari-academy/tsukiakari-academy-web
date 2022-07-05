@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react"
 import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { talents as talentsTitle, talentImages } from "@images"
-import { SectionTitle, SectionPagination, SliderNavigation } from "@components"
+import { talentImages } from "@images"
+import { SectionTitle, SliderNavigation } from "@components"
 
 import "./talents.scss"
 
@@ -18,6 +18,7 @@ const TalensSection = React.forwardRef((props, ref) => {
 });
 
 const Talents = ({refProp}) => {
+  const contentEl = useRef()
   const titleEl = useRef()
   const bioEl = useRef()
 
@@ -25,28 +26,48 @@ const Talents = ({refProp}) => {
   const [displayBio, setDisplayBio] = useState("")
   const [activeSlide, setActiveSlide] = useState(0)
 
+  const onSlideChangeStart = () => {
+    if (window.innerWidth > 991) {
+      titleEl.current.classList.add("transition")
+      bioEl.current.classList.add("transition")
+
+      return
+    }
+
+    contentEl.current.classList.add("transition")
+  }
+
+  const onSlideChangeEnd = () => {
+    if (window.innerWidth > 991) {
+      titleEl.current.classList.remove("transition")
+      bioEl.current.classList.remove("transition")
+
+      return
+    }
+
+    contentEl.current.classList.remove("transition")
+  }
+
   SwiperCore.use([Autoplay, Navigation, EffectFade])
 
   const SWIPER_PROPS = {
-    onAfterInit: swiper => {
+    onAfterInit: () => {
       setDisplayName(talents[0].name)
       setDisplayBio(talents[0].biography)
     },
     onSlideChangeTransitionStart: ({ realIndex }) => {
-      if (!titleEl.current || !bioEl.current) return
+      if (!contentEl.current) return
 
       setActiveSlide(realIndex)
-      titleEl.current.classList.add("transition")
-      bioEl.current.classList.add("transition")
+      onSlideChangeStart()
     },
     onSlideChangeTransitionEnd: swiper => {
-      if (!titleEl.current || !bioEl.current) return
+      if (!contentEl.current) return
 
       setDisplayName(talents[swiper.realIndex].name)
       setDisplayBio(talents[swiper.realIndex].biography)
 
-      titleEl.current.classList.remove("transition")
-      bioEl.current.classList.remove("transition")
+      onSlideChangeEnd()
     },
     navigation: {
       prevEl: ".talents__navigation .slider-navigation__prev",
@@ -65,12 +86,12 @@ const Talents = ({refProp}) => {
   }
 
   const renderContentDetails = () => (
-    <div className="talents__content">
+    <div className="talents__content" ref={contentEl}>
       <div className="talents__title-wrapper" ref={titleEl}>
         <p className="talents__title">{displayName}</p>
       </div>
       <p className="talents__biography" ref={bioEl}>{displayBio}</p>
-      <SliderNavigation className="talents__navigation" />
+      <SliderNavigation className="talents__navigation d-none d-lg-flex" />
     </div>
   )
 
@@ -85,6 +106,8 @@ const Talents = ({refProp}) => {
 
         <div className="talents__slider">
           <span className="talents__section-number">{renderSectionNumber()}</span>
+
+          <SliderNavigation className="talents__navigation d-lg-none" />
 
           <Swiper {...SWIPER_PROPS}>
             {talents.map((talent, index) => (

@@ -52,7 +52,10 @@ export const Header = ({ color, linkClicked }) => {
 
           <nav className="header__navbar">
             <ul className="header__navbar-wrapper">
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item">FAQ</a></li>
+              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
+                event.preventDefault();
+                linkClicked('faqs');
+              }}>FAQ</a></li>
               <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
                 event.preventDefault();
                 linkClicked('talents');
