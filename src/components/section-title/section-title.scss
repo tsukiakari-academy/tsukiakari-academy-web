@@ -10,10 +10,18 @@
 
   &.left {
     align-items: flex-start;
+
+    .section-title__desc {
+      text-align: left;
+    }
   }
 
   &.right {
     align-items: flex-end;
+
+    .section-title__desc {
+      text-align: right;
+    }
   }
 
   &__title {
@@ -34,31 +42,9 @@
 
   &__desc {
     font-size: 18px;
+    line-height: 30px;
     margin: 0;
     margin-top: 10px;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .section-title {
-    &__title {
-      font-size: 36px;
-    }
-
-    &__desc {
-      font-size: 14px;
-    }
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  .section-title {
-    &__title {
-      font-size: 36px;
-    }
-
-    &__desc {
-      font-size: 14px;
-    }
+    text-align: center;
   }
 }

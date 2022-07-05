@@ -7,13 +7,16 @@ import Banner from "./home/banner/banner"
 import About from "./home/about/about"
 import Talents from "./home/talents/talents"
 import Teams from "./home/teams/teams"
+import Faqs from "./home/faqs/faqs"
+import Collaboration from "./home/collaboration/collaboration"
 
 import "@scss/app.scss"
 
 // markup
 const IndexPage = () => {
-  const aboutUsSection = React.useRef(null);
-  const talentsSection = React.useRef(null);
+  const aboutUsSection = React.useRef(null)
+  const talentsSection = React.useRef(null)
+  const faqsSection = React.useRef(null)
 
   const linkClicked = (link) => {
     switch (link) {
@@ -21,12 +24,17 @@ const IndexPage = () => {
         if(aboutUsSection){
           aboutUsSection.current.scrollIntoView({behavior: 'smooth'});
         }
-        break;
+        break
       case 'talents':
         if(talentsSection){
           talentsSection.current.scrollIntoView({behavior: 'smooth'})
         }
-    
+        break
+      case 'faqs':
+        if(faqsSection){
+          faqsSection.current.scrollIntoView({behavior: 'smooth'})
+        }
+        break
       default:
         break;
     }
@@ -43,6 +51,8 @@ const IndexPage = () => {
         <About refProp={aboutUsSection}/>
         <Teams />
         <Talents refProp={talentsSection}/>
+        <Faqs refProp={faqsSection} />
+        <Collaboration />
       </Layout>
     </>
   );
