@@ -17,7 +17,7 @@ export const Accordion = ({ data, extraClass }) => {
   }
 
   const getAdditionalHeight = () => {
-    if (window.innerWidth > 992) return 60
+    if (window.innerWidth > 991) return 60
 
     return 40
   }
