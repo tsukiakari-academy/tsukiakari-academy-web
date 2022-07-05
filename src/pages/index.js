@@ -8,6 +8,7 @@ import About from "./home/about/about"
 import Talents from "./home/talents/talents"
 import Teams from "./home/teams/teams"
 import Faqs from "./home/faqs/faqs"
+import Collaboration from "./home/collaboration/collaboration"
 
 import "@scss/app.scss"
 
@@ -51,6 +52,7 @@ const IndexPage = () => {
         <Teams />
         <Talents refProp={talentsSection}/>
         <Faqs refProp={faqsSection} />
+        <Collaboration />
       </Layout>
     </>
   );

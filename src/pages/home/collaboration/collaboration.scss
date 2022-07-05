@@ -1,0 +1,97 @@
+@import "@scss/palette";
+
+.collaboration {
+  overflow: hidden;
+  padding: 220px 0 80px 0;
+  position: relative;
+
+  &::before {
+    background-color: $secondary;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    bottom: 0;
+    content: "";
+    left: -10%;
+    position: absolute;
+    right: -10%;
+    top: 220px;
+  }
+
+  &__title-wrapper {
+    color: $pure-white;
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 48px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+
+  &__button-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+  }
+
+  &__button {
+    background-color: $pure-white;
+    border: none;
+    border-radius: 8px;
+    color: $secondary;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 55px;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .collaboration {
+    padding-top: 120px;
+
+    &::before {
+      top: 120px;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .collaboration {
+    padding-top: 170px;
+
+    &::before {
+      left: -20%;
+      right: -20%;
+      top: 170px;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .collaboration {
+    padding-bottom: 60px;
+    padding-top: 120px;
+
+    &::before {
+      top: 120px;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__description,
+    &__button {
+      font-size: 14px;
+    }
+  }
+}
