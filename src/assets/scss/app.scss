@@ -31,6 +31,7 @@ button {
 }
 
 .container {
+  padding: 0 15px;
   position: relative;
 }
 
@@ -53,11 +54,5 @@ button {
 @media only screen and (min-width: 1400px) {
   .container {
     max-width: 1080px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .container{
-    padding: 0 16px;
   }
 }

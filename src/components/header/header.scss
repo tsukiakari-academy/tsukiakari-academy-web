@@ -9,6 +9,7 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
   position: fixed;
   right: 0;
   top: 0;
+  transition: box-shadow 0.2s $transition-timing;
   z-index: 990;
 
   &.scrolled {
@@ -38,11 +39,7 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
   .container {
     position: initial;
-
-    @media screen and (max-width:500px) {
-      background-color: #fff;
-      padding: 0 16px 20px 16px;
-    }
+    transition: padding-top 0.2s $transition-timing;
   }
 
   &__top-decoration {
@@ -139,8 +136,6 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
     display: none;
     height: 60px;
     justify-content: center;
-    margin-left: 10px;
-    margin-top: 48px;
     position: relative;
     transition: margin-top 0.2s $transition-timing;
     width: 60px;
@@ -223,36 +218,26 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
 @media only screen and (max-width: 767px) {
   .header {
-    background-color: transparent;
     box-shadow: none;
 
     &.scrolled {
-      .header {
-        &__main-wrapper {
-          margin-top: 30px;
-        }
+      box-shadow: 0px 2px 10px 0px rgba($secondary, 0.15);
 
-        &__mobile-button {
-          margin-top: 30px;
-        }
+      .container {
+        padding-top: 15px;
       }
     }
 
-    &__container {
+    .container {
       align-items: center;
       display: flex;
+      justify-content: space-between;
+      padding: 25px 15px 15px 15px;
     }
 
     &__main-wrapper {
-      background-color: $pure-white;
-      border-radius: 8px;
-      flex: 1;
       height: 60px;
-      margin-top: 48px;
-    }
-
-    &__logo-wrapper {
-      margin-left: 15px;
+      margin-top: 0;
     }
 
     &__navbar {
@@ -265,14 +250,6 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
 
     &__mobile-button {
       display: flex;
-    }
-  }
-}
-
-@media screen and (max-width:500px) {
-  .header {
-    &__logo-wrapper {
-      margin-left: 0;
     }
   }
 }

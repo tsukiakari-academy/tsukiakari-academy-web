@@ -40,7 +40,7 @@ export const Header = ({ color, linkClicked }) => {
 
   return (
     <header className="header" ref={headerEl}>
-      <div className="container header__container">
+      <div className="container">
         <div className="header__top-decoration" style={{ backgroundColor: color  }}></div>
 
         <div className="header__main-wrapper">
