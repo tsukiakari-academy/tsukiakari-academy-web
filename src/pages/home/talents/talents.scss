@@ -171,34 +171,27 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
 
 @media only screen and (max-width: 991px) {
   .talents {
-    display: none;
-    padding-bottom: 165px;
+    padding-bottom: 60px;
     padding-top: 120px;
 
     .swiper-container {
-      margin: auto;
+      left: 0;
       position: relative;
+      right: 0;
       top: 0;
-      width: 50%;
-    }
-
-    &__section-title {
-      margin-top: 165px;
     }
 
     &__section-number {
-      bottom: -50px;
-      left: auto;
-      right: 0;
+      padding-top: 50px;
     }
 
     &__slider {
       margin-top: 50px;
-      padding-top: 30px;
+      padding: 60px 0;
 
       &::before {
-        background-color: rgba($grey-dark, 0.15);
-        bottom: 25px;
+        background-color: $secondary;
+        bottom: 0;
         content: "";
         left: -100vw;
         right: -100vw;
@@ -207,9 +200,18 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
       }
     }
 
+    &__image-wrapper {
+      padding-top: 75%;
+    }
+
     &__content {
-      padding: 0;
+      background-color: rgba($primary, 0.8);
+      border-radius: 20px;
+      bottom: -50px;
+      padding: 25px 35px;
+      position: absolute;
       width: 100%;
+      z-index: 10;
 
       &::before {
         content: none;
@@ -217,36 +219,47 @@ $transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     &__title-wrapper {
-      padding-top: 5px;
+      padding-top: 0;
+    }
+
+    &__biography {
+      margin-top: 40px;
+    }
+
+    &__navigation {
+      margin-top: 45px;
     }
   }
 }
 
 @media only screen and (max-width: 575px) {
   .talents {
-    padding-bottom: 115px;
-    padding-top: 60px;
-
-    &__section-title {
-      margin-top: 115px;
-
-      img {
-        width: 100%;
-      }
+    &__section-number {
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      font-size: 64px;
     }
 
-    &__section-number {
-      bottom: -25px;
-      font-size: 80px;
+    &__slider {
+      padding: 60px 0;
+    }
+
+    &__image-wrapper {
+      padding-top: 125%;
+    }
+
+    &__content {
+      border-radius: 10px;
+      padding: 25px;
     }
 
     &__title {
-      font-size: 48px;
+      font-size: 36px;
     }
 
-    &__sub-title,
     &__biography {
       font-size: 14px;
+      margin-top: 20px;
     }
 
     &__navigation {
