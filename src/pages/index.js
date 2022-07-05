@@ -7,6 +7,7 @@ import Banner from "./home/banner/banner"
 import About from "./home/about/about"
 import Talents from "./home/talents/talents"
 import Teams from "./home/teams/teams"
+import Faqs from "./home/faqs/faqs"
 
 import "@scss/app.scss"
 
@@ -26,7 +27,6 @@ const IndexPage = () => {
         if(talentsSection){
           talentsSection.current.scrollIntoView({behavior: 'smooth'})
         }
-    
       default:
         break;
     }
@@ -43,6 +43,7 @@ const IndexPage = () => {
         <About refProp={aboutUsSection}/>
         <Teams />
         <Talents refProp={talentsSection}/>
+        <Faqs />
       </Layout>
     </>
   );
