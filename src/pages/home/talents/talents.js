@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
@@ -9,15 +9,8 @@ import "./talents.scss"
 
 const talents = require("./talents-data.json")
 
-const TalensSection = React.forwardRef((props, ref) => {
-  return (
-    <section className="talents" ref={ref}>
-      {props.children}
-    </section>
-  );
-});
-
-const Talents = ({refProp}) => {
+const Talents = ({ setNavigation }) => {
+  const talentRef = useRef()
   const contentEl = useRef()
   const titleEl = useRef()
   const bioEl = useRef()
@@ -95,8 +88,12 @@ const Talents = ({refProp}) => {
     </div>
   )
 
+  useEffect(() => {
+    setNavigation({ talents: talentRef })
+  }, [setNavigation])
+
   return (
-    <TalensSection ref={refProp}>
+    <section ref={talentRef} className="talents">
       <div className="container">
         <SectionTitle
           title="Our Talents"
@@ -122,7 +119,7 @@ const Talents = ({refProp}) => {
           {renderContentDetails()}
         </div>
       </div>
-    </TalensSection>
+    </section>
   )
 }
 
