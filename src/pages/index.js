@@ -12,20 +12,27 @@ import Collaboration from "./home/collaboration/collaboration"
 
 import "@scss/app.scss"
 
-// markup
 const IndexPage = () => {
+  const [navigation, setNavigation] = React.useState({})
+
+  const onSetNavigation = (elRef) => {
+    const listNavigation = Object.assign(navigation, elRef)
+
+    setNavigation(listNavigation)
+  }
+
   return (
     <>
       <Helmet>
         <title>Tsukiakari Academy</title>
       </Helmet>
 
-      <Layout color="#1c2742">
+      <Layout color="#1c2742" navigation={navigation}>
         <Banner />
-        <About />
+        <About setNavigation={(elRef) => onSetNavigation(elRef)} />
         <Teams />
-        <Talents />
-        <Faqs />
+        <Talents setNavigation={(elRef) => onSetNavigation(elRef)} />
+        <Faqs setNavigation={(elRef) => onSetNavigation(elRef)} />
         <Collaboration />
       </Layout>
     </>

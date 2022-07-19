@@ -1,13 +1,22 @@
 import React, { useEffect, useRef } from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import { logo } from "@images"
 
 import "./header.scss"
 
-export const Header = ({ color }) => {
+export const Header = ({ color, navigation }) => {
   const headerEl = useRef()
   const mobileBtnEl = useRef()
+
+  const onMenuClick = (menuParam) => {
+    Object.keys(navigation).forEach((menu, index) => {
+      if (menu === menuParam) {
+        Object.values(navigation)[index]
+          .current
+          .scrollIntoView({behavior: 'smooth'})
+      }
+    })
+  }
 
   const pageScrollHandler = () => {
     if (window.scrollY > 10) return headerEl.current.classList.add('scrolled')
@@ -54,25 +63,28 @@ export const Header = ({ color }) => {
           <nav className="header__navbar">
             <ul className="header__navbar-wrapper">
               <li className="header__navbar-list">
-                <AnchorLink
-                  to="#faqs"
-                  title="FAQ"
+                <button
                   className="header__navbar-item"
-                />
+                  onClick={() => onMenuClick('faqs')}
+                >
+                  FAQ
+                </button>
               </li>
               <li className="header__navbar-list">
-                <AnchorLink
-                  to="#talents"
-                  title="Talents"
+                <button
                   className="header__navbar-item"
-                />
+                  onClick={() => onMenuClick('talents')}
+                >
+                  Talents
+                </button>
               </li>
               <li className="header__navbar-list">
-                <AnchorLink
-                  to="#about"
-                  title="About Us"
+                <button
                   className="header__navbar-item"
-                />
+                  onClick={() => onMenuClick('about')}
+                >
+                  About Us
+                </button>
               </li>
             </ul>
             <button onClick={() => window.location.href='https://bit.ly/TsukiakariApplicationForm'} className="header__navbar-cta">Join Us</button>

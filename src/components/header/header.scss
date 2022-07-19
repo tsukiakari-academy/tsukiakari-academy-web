@@ -88,7 +88,7 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
       left: -140px;
       position: absolute;
       right: -100vw;
-      top: -20px;
+      top: -25px;
       transition: left 0.6s $transition-timing;
       z-index: -1;
     }
@@ -107,8 +107,13 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   &__navbar-item {
+    background-color: transparent;
+    border: none;
     color: $pure-white;
+    cursor: pointer;
+    font-size: 16px;
     font-weight: 700;
+    padding: 0;
     text-decoration: none;
     text-transform: uppercase;
     transition: font-size 0.2s $transition-timing;

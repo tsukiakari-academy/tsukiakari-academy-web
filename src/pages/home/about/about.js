@@ -1,13 +1,19 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 
 import { people, peopleSmall, facebook, youtube, twitter } from "@images"
 import { SectionTitle } from "@components"
 
 import "./about.scss"
 
-const About = () => {
+const About = ({ setNavigation }) => {
+  const aboutRef = useRef()
+
+  useEffect(() => {
+    setNavigation({ about: aboutRef })
+  }, [setNavigation])
+
   return (
-    <section id="about" className="home-about">
+    <section ref={aboutRef} className="home-about">
       <div className="container">
         <div className="home-about__content">
           <SectionTitle
