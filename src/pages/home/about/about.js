@@ -1,21 +1,19 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 
 import { people, peopleSmall, facebook, youtube, twitter } from "@images"
 import { SectionTitle } from "@components"
 
 import "./about.scss"
 
-const AboutUsSection = React.forwardRef((props, ref) => {
-  return (
-    <section ref={ref} className="home-about">
-      {props.children}
-    </section>
-  )
-});
+const About = ({ setNavigation }) => {
+  const aboutRef = useRef()
 
-const About = ({refProp}) => {
+  useEffect(() => {
+    setNavigation({ about: aboutRef })
+  }, [setNavigation])
+
   return (
-    <AboutUsSection ref={refProp}>
+    <section ref={aboutRef} className="home-about">
       <div className="container">
         <div className="home-about__content">
           <SectionTitle
@@ -51,7 +49,7 @@ const About = ({refProp}) => {
         <img src={people} className="d-none d-lg-block" alt="People" />
         <img src={peopleSmall} className="d-lg-none" alt="People" />
       </div>
-    </AboutUsSection>
+    </section>
   )
 }
 

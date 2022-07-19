@@ -6,7 +6,7 @@ import "./banner.scss"
 
 const Banner = () => {
     return (
-        <div className="banner">
+        <section className="banner">
           <div className="banner__content">
             <div className="banner__logo-wrapper">
               <img src={logoFull} alt="banner logo" className="banner__logo"/>
@@ -21,7 +21,7 @@ const Banner = () => {
               <img src={arrow} alt="caret down" className="banner__caret-down"/>
             </div>
           </div>
-        </div>
+        </section>
     )
 }
 
