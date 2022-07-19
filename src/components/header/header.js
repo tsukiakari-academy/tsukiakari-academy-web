@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import { logo } from "@images"
 
 import "./header.scss"
 
-export const Header = ({ color, linkClicked }) => {
+export const Header = ({ color }) => {
   const headerEl = useRef()
   const mobileBtnEl = useRef()
 
@@ -52,18 +53,27 @@ export const Header = ({ color, linkClicked }) => {
 
           <nav className="header__navbar">
             <ul className="header__navbar-wrapper">
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
-                event.preventDefault();
-                linkClicked('faqs');
-              }}>FAQ</a></li>
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
-                event.preventDefault();
-                linkClicked('talents');
-              }}>Talents</a></li>
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
-                event.preventDefault();
-                linkClicked('about-us');
-              }}>About Us</a></li>
+              <li className="header__navbar-list">
+                <AnchorLink
+                  to="#faqs"
+                  title="FAQ"
+                  className="header__navbar-item"
+                />
+              </li>
+              <li className="header__navbar-list">
+                <AnchorLink
+                  to="#talents"
+                  title="Talents"
+                  className="header__navbar-item"
+                />
+              </li>
+              <li className="header__navbar-list">
+                <AnchorLink
+                  to="#about"
+                  title="About Us"
+                  className="header__navbar-item"
+                />
+              </li>
             </ul>
             <button onClick={() => window.location.href='https://bit.ly/TsukiakariApplicationForm'} className="header__navbar-cta">Join Us</button>
           </nav>

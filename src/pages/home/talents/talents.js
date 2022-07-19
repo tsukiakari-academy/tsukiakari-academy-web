@@ -9,15 +9,7 @@ import "./talents.scss"
 
 const talents = require("./talents-data.json")
 
-const TalensSection = React.forwardRef((props, ref) => {
-  return (
-    <section className="talents" ref={ref}>
-      {props.children}
-    </section>
-  );
-});
-
-const Talents = ({refProp}) => {
+const Talents = () => {
   const contentEl = useRef()
   const titleEl = useRef()
   const bioEl = useRef()
@@ -96,7 +88,7 @@ const Talents = ({refProp}) => {
   )
 
   return (
-    <TalensSection ref={refProp}>
+    <section className="talents" id="talents">
       <div className="container">
         <SectionTitle
           title="Our Talents"
@@ -122,7 +114,7 @@ const Talents = ({refProp}) => {
           {renderContentDetails()}
         </div>
       </div>
-    </TalensSection>
+    </section>
   )
 }
 

@@ -5,17 +5,9 @@ import { SectionTitle } from "@components"
 
 import "./about.scss"
 
-const AboutUsSection = React.forwardRef((props, ref) => {
+const About = () => {
   return (
-    <section ref={ref} className="home-about">
-      {props.children}
-    </section>
-  )
-});
-
-const About = ({refProp}) => {
-  return (
-    <AboutUsSection ref={refProp}>
+    <section id="about" className="home-about">
       <div className="container">
         <div className="home-about__content">
           <SectionTitle
@@ -51,7 +43,7 @@ const About = ({refProp}) => {
         <img src={people} className="d-none d-lg-block" alt="People" />
         <img src={peopleSmall} className="d-lg-none" alt="People" />
       </div>
-    </AboutUsSection>
+    </section>
   )
 }
 

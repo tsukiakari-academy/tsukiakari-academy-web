@@ -6,9 +6,9 @@ import "./faqs.scss"
 
 const faqs = require("./faqs-data.json")
 
-const Faqs = ({ refProp }) => {
+const Faqs = () => {
   return (
-    <section className="faqs" ref={refProp}>
+    <section className="faqs" id="faqs">
       <div className="container">
         <SectionTitle
           align="left"
