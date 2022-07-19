@@ -4,9 +4,19 @@ import { logo } from "@images"
 
 import "./header.scss"
 
-export const Header = ({ color, linkClicked }) => {
+export const Header = ({ color, navigation }) => {
   const headerEl = useRef()
   const mobileBtnEl = useRef()
+
+  const onMenuClick = (menuParam) => {
+    Object.keys(navigation).forEach((menu, index) => {
+      if (menu === menuParam) {
+        Object.values(navigation)[index]
+          .current
+          .scrollIntoView({behavior: 'smooth'})
+      }
+    })
+  }
 
   const pageScrollHandler = () => {
     if (window.scrollY > 10) return headerEl.current.classList.add('scrolled')
@@ -40,7 +50,7 @@ export const Header = ({ color, linkClicked }) => {
 
   return (
     <header className="header" ref={headerEl}>
-      <div className="container header__container">
+      <div className="container">
         <div className="header__top-decoration" style={{ backgroundColor: color  }}></div>
 
         <div className="header__main-wrapper">
@@ -52,18 +62,30 @@ export const Header = ({ color, linkClicked }) => {
 
           <nav className="header__navbar">
             <ul className="header__navbar-wrapper">
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
-                event.preventDefault();
-                linkClicked('faqs');
-              }}>FAQ</a></li>
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
-                event.preventDefault();
-                linkClicked('talents');
-              }}>Talents</a></li>
-              <li className="header__navbar-list"><a href="/" className="header__navbar-item" onClick={(event) => {
-                event.preventDefault();
-                linkClicked('about-us');
-              }}>About Us</a></li>
+              <li className="header__navbar-list">
+                <button
+                  className="header__navbar-item"
+                  onClick={() => onMenuClick('faqs')}
+                >
+                  FAQ
+                </button>
+              </li>
+              <li className="header__navbar-list">
+                <button
+                  className="header__navbar-item"
+                  onClick={() => onMenuClick('talents')}
+                >
+                  Talents
+                </button>
+              </li>
+              <li className="header__navbar-list">
+                <button
+                  className="header__navbar-item"
+                  onClick={() => onMenuClick('about')}
+                >
+                  About Us
+                </button>
+              </li>
             </ul>
             <button onClick={() => window.location.href='https://bit.ly/TsukiakariApplicationForm'} className="header__navbar-cta">Join Us</button>
           </nav>
