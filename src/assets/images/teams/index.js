@@ -5,8 +5,8 @@ import bean from "./bean.png"
 import llao from "./llao.png"
 import naoto from "./naoto.png"
 import renFubuki from "./ren-fubuki.png"
-import rin from "./rin.jpg"
-import tsuu from "./tsuu.jpg"
+import rin from "./rin.png"
+import tsuu from "./tsuu.png"
 
 const teamImages = [
   akira,
