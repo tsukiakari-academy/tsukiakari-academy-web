@@ -1,15 +1,15 @@
 [
   {
     "name": "Akira",
-    "position": "Graphic Designer/Animator"
+    "position": "Video Editor"
   },
   {
     "name": "Ame",
-    "position": "Graphic Designer/Animator"
+    "position": "Head Illustrator"
   },
   {
     "name": "Anzu",
-    "position": "Graphic Designer/Animator"
+    "position": "Talent Manager"
   },
   {
     "name": "Bean",
@@ -17,7 +17,7 @@
   },
   {
     "name": "LLao",
-    "position": "Story Writter/Novelist"
+    "position": "Writer"
   },
   {
     "name": "Naoto",
@@ -25,14 +25,14 @@
   },
   {
     "name": "Ren Fubuki",
-    "position": "Graphic Designer/Animator"
+    "position": "Rigger"
   },
   {
     "name": "Rin",
-    "position": "Manager"
+    "position": "Talent Manager"
   },
   {
     "name": "Tsuu",
-    "position": "Manager"
+    "position": "Social Media Manager"
   }
 ]
