@@ -9,7 +9,8 @@
 /* Load color palette */
 @import "palette";
 
-html {
+html,
+body {
   scroll-behavior: smooth;
 }
 
