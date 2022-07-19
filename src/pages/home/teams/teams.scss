@@ -26,13 +26,15 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   &__image-wrapper {
-    background-color: $grey;
-    border-radius: 30px;
-    box-shadow: 2px 2px 10px rgba($pure-black, 0.20);
     height: 0;
-    overflow: hidden;
-    padding-top: 128%;
+    padding-top: 165%;
     position: relative;
+
+    &:hover {
+      .teams__image {
+        transform: scale(1.05);
+      }
+    }
   }
 
   &__image {
@@ -42,114 +44,21 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
     object-position: top;
     position: absolute;
     top: 0;
+    transition: transform 0.2s $transition-timing;
     width: 100%;
-  }
-
-  &__content {
-    background-color: $primary;
-    border-radius: 30px;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    overflow: hidden;
-    padding: 25px;
-    position: absolute;
-    right: 0;
-    transform: translateY(60%);
-    transition: transform 0.6s $transition-timing, opacity 0.8s $transition-timing;
-
-    &::after {
-      background-color: $grey-dark;
-      border-radius: 50%;
-      content: "";
-      height: 160px;
-      position: absolute;
-      right: -50px;
-      top: 30px;
-      width: 160px;
-      z-index: -1;
-    }
-  }
-
-  &__title {
-    color: $pure-white;
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0;
-  }
-
-  &__position {
-    color: $pure-white;
-    font-size: 16px;
-    font-weight: 300;
-    margin: 0;
   }
 
   &__navigation {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-top: 110px;
-  }
-
-  &__team-details {
-    align-items: center;
-    color: $pure-black;
-    display: flex;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.4s $transition-timing;
-
-    &:hover {
-      color: $primary;
-
-      &::before {
-        width: 0;
-      }
-    }
-
-    &::before {
-      background-color: $pure-black;
-      content: "";
-      height: 1px;
-      margin-right: 15px;
-      transform: 100%;
-      transition: width 0.4s $transition-timing;
-      width: 35px;
-    }
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .teams {
-    &__image-wrapper {
-      border-radius: 20px;
-    }
-
-    &__content {
-      border-radius: 20px;
-      padding: 20px;
-    }
-
-    &__title {
-      font-size: 14px;
-    }
-
-    &__position {
-      font-size: 12px;
-    }
+    margin-top: 60px;
   }
 }
 
 @media only screen and (max-width: 1199px) {
   .teams {
     margin-top: 120px;
-
-    &__navigation {
-      margin-top: 60px;
-    }
   }
 }
 
@@ -157,23 +66,6 @@ $transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
   .teams {
     &__slider {
       padding: 0 90px;
-    }
-
-    &__image-wrapper {
-      border-radius: 15px;
-    }
-
-    &__content {
-      border-radius: 15px;
-      padding: 15px;
-    }
-
-    &__title {
-      font-size: 14px;
-    }
-
-    &__position {
-      font-size: 12px;
     }
   }
 }

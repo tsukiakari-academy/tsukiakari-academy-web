@@ -7,8 +7,6 @@ import { SectionTitle, SliderNavigation } from "@components"
 
 import "./teams.scss"
 
-const teams = require("./teams-data.json")
-
 const Teams = () => {
   SwiperCore.use([Navigation])
 
@@ -20,7 +18,6 @@ const Teams = () => {
     speed: 900,
     slidesPerView: 1,
     spaceBetween: 15,
-    allowTouchMove: false,
     loop: true,
     breakpoints: {
       768: {
@@ -43,14 +40,10 @@ const Teams = () => {
 
         <div className="teams__slider">
           <Swiper {...SWIPER_PROPS}>
-            {teams.map((team, index) => (
+            {teamImages.map((image, index) => (
               <SwiperSlide key={index} className="teams__slide">
                 <div className="teams__image-wrapper">
-                  <img src={teamImages[index]} className="teams__image" alt={team.name} />
-                </div>
-                <div className="teams__content">
-                  <p className="teams__title">{team.name}</p>
-                  <p className="teams__position">{team.position}</p>
+                  <img src={image} className="teams__image" alt="Team Member" />
                 </div>
               </SwiperSlide>
             ))}
