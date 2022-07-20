@@ -4,7 +4,7 @@ import { logo } from "@images"
 
 import "./header.scss"
 
-export const Header = ({ color, navigation }) => {
+export const Header = ({ color, navigation, withoutMenu }) => {
   const headerEl = useRef()
   const navEl = useRef()
   const mobileBtnEl = useRef()
@@ -30,7 +30,7 @@ export const Header = ({ color, navigation }) => {
   }
 
   const mobileButtonClickHandler = () => {
-    if (window.innerWidth > 767) return
+    if (window.innerWidth > 767 || withoutMenu) return
 
     mobileBtnEl.current.addEventListener('click', () => {
       mobileBtnEl.current.classList.toggle('active')
@@ -40,6 +40,8 @@ export const Header = ({ color, navigation }) => {
   }
 
   const resetElementsClasses = () => {
+    if (withoutMenu) return
+
     mobileBtnEl.current.classList.remove('active')
     navEl.current.classList.remove('open')
     document.querySelector('body').classList.remove('overflow-hidden')
@@ -86,42 +88,46 @@ export const Header = ({ color, navigation }) => {
     </>
   )
 
-  const renderNavigation = (isMobile = false) => (
-    <nav ref={navEl} className="header__navbar">
-      {isMobile ? (
-        <div className="container">
-          {renderMenuNav()}
-          <div className="header__additional-menu">
-            <p className="header__additional-title">Contact us</p>
+  const renderNavigation = (isMobile = false) => {
+    if (withoutMenu) return null
 
-            <div className="header__additional">
-              <a href="mailto:staff@tsukiakariacademy.com" className="header__contact-email">staff@tsukiakariacademy.com</a>
+    return (
+      <nav ref={navEl} className="header__navbar">
+        {isMobile ? (
+          <div className="container">
+            {renderMenuNav()}
+            <div className="header__additional-menu">
+              <p className="header__additional-title">Contact us</p>
+
+              <div className="header__additional">
+                <a href="mailto:staff@tsukiakariacademy.com" className="header__contact-email">staff@tsukiakariacademy.com</a>
+              </div>
+            </div>
+            <div className="header__additional-menu">
+              <p className="header__additional-title">Social Media</p>
+
+              <ul className="header__additional">
+                <li className="header__additional-item">
+                  <a href="https://www.facebook.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </li>
+                <li className="header__additional-item">
+                  <a href="https://www.instagram.com/tsukiakariac/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+                <li className="header__additional-item">
+                  <a href="https://twitter.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </li>
+                <li className="header__additional-item">
+                  <a href="https://www.youtube.com/watch?v=yqWX86uT5jM" target="_blank" rel="noopener noreferrer">Youtube</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className="header__additional-menu">
-            <p className="header__additional-title">Social Media</p>
-
-            <ul className="header__additional">
-              <li className="header__additional-item">
-                <a href="https://www.facebook.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Facebook</a>
-              </li>
-              <li className="header__additional-item">
-                <a href="https://www.instagram.com/tsukiakariac/" target="_blank" rel="noopener noreferrer">Instagram</a>
-              </li>
-              <li className="header__additional-item">
-                <a href="https://twitter.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Twitter</a>
-              </li>
-              <li className="header__additional-item">
-                <a href="https://www.youtube.com/watch?v=yqWX86uT5jM" target="_blank" rel="noopener noreferrer">Youtube</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      ) : (
-        renderMenuNav()
-      )}
-    </nav>
-  )
+        ) : (
+          renderMenuNav()
+        )}
+      </nav>
+    )
+  }
 
   useEffect(() => {
     mobileButtonClickHandler()
@@ -150,12 +156,14 @@ export const Header = ({ color, navigation }) => {
           {renderNavigation(true)}
         </div>
 
-        <button className="header__mobile-button" ref={mobileBtnEl}>
-          <div>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
+        {!withoutMenu && (
+          <button className="header__mobile-button" ref={mobileBtnEl}>
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        )}
       </div>
     </header>
   )
