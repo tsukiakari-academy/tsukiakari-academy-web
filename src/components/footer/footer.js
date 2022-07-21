@@ -17,39 +17,36 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer__main">
         <div className="container">
-          <div className="footer__main-section">
-            <div className="footer__logo">
-              <img src={logoFull} alt="Footer Logo" />
-            </div>
-
-            <p className="footer__description">
-              We are Tsukiakari Academy, a VTuber Team based on Academia theme
-              a group of people who have one goal which is to help others VTubers
-            </p>
+          <div className="footer__logo">
+            <img src={logoFull} alt="Footer Logo" />
           </div>
 
           <div className="footer__side-section">
-            <p className="footer__section-title">Social Media</p>
+            <div className="footer__section-wrapper">
+              <p className="footer__section-title">Social Media</p>
 
-            <ul className="footer__section">
-              <li className="footer__item">
-                <a href="https://www.facebook.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Facebook</a>
-              </li>
-              <li className="footer__item">
-                <a href="https://www.instagram.com/tsukiakariac/" target="_blank" rel="noopener noreferrer">Instagram</a>
-              </li>
-              <li className="footer__item">
-                <a href="https://twitter.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Twitter</a>
-              </li>
-              <li className="footer__item">
-                <a href="https://www.youtube.com/watch?v=yqWX86uT5jM" target="_blank" rel="noopener noreferrer">Youtube</a>
-              </li>
-            </ul>
+              <ul className="footer__section">
+                <li className="footer__item">
+                  <a href="https://www.facebook.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </li>
+                <li className="footer__item">
+                  <a href="https://www.instagram.com/tsukiakariac/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+                <li className="footer__item">
+                  <a href="https://twitter.com/TsukiakariAC" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </li>
+                <li className="footer__item">
+                  <a href="https://www.youtube.com/watch?v=yqWX86uT5jM" target="_blank" rel="noopener noreferrer">Youtube</a>
+                </li>
+              </ul>
+            </div>
 
-            <p className="footer__section-title">Contact us</p>
+            <div className="footer__section-wrapper">
+              <p className="footer__section-title">Contact us</p>
 
-            <div className="footer__section">
-              <a href="mailto:staff@tsukiakariacademy.com" className="footer__contact-email">staff@tsukiakariacademy.com</a>
+              <div className="footer__section">
+                <a href="mailto:staff@tsukiakariacademy.com" className="footer__contact-email">staff@tsukiakariacademy.com</a>
+              </div>
             </div>
           </div>
         </div>
