@@ -1,0 +1,105 @@
+@import "@scss/palette";
+
+.benefit-rules {
+  margin-top: -60px;
+
+  .container {
+    display: flex;
+  }
+
+  &__item {
+    background-color: $pure-white;
+    border: 1px solid $pure-black;
+    border-radius: 30px;
+    box-shadow: 0px 6px 15px 0px rgba($pure-black, 0.03);
+    padding: 50px;
+
+    &:last-child {
+      margin-left: 80px;
+    }
+  }
+
+  &__title {
+    color: $primary;
+    font-size: 24px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+  }
+
+  &__list-item {
+    font-size: 18px;
+    line-height: 35px;
+    padding-left: 10px;
+    position: relative;
+
+    &::before {
+      background-color: $pure-black;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      top: 16px;
+      width: 5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .benefit-rules {
+    &__item {
+      border-radius: 20px;
+      padding: 40px;
+
+      &:last-child {
+        margin-left: 40px;
+      }
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__list-item {
+      font-size: 16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .benefit-rules {
+    .container {
+      flex-direction: column;
+    }
+
+    &__item {
+      &:last-child {
+        margin-left: 0;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .benefit-rules {
+    &__item {
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__list-item {
+      font-size: 16px;
+    }
+  }
+}

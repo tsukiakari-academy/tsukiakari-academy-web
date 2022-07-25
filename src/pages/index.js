@@ -27,7 +27,7 @@ const IndexPage = () => {
         <title>Tsukiakari Academy</title>
       </Helmet>
 
-      <Layout color="#1c2742" navigation={navigation}>
+      <Layout color="#1c2742" navigation={navigation} home={true}>
         <Banner />
         <About setNavigation={(elRef) => onSetNavigation(elRef)} />
         <Teams />

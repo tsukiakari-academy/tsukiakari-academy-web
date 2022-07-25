@@ -28,3 +28,33 @@
     }
   }
 }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .text-field {
+    margin-top: 20px;
+
+    &__input {
+      font-size: 16px;
+      padding: 20px;
+
+      &.textarea {
+        height: 202px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .text-field {
+    margin-top: 20px;
+
+    &__input {
+      font-size: 16px;
+      padding: 20px;
+
+      &.textarea {
+        height: 202px;
+      }
+    }
+  }
+}

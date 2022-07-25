@@ -18,3 +18,23 @@
     width: 230px;
   }
 }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .banner-section {
+    &::before {
+      border-radius: 10px;
+      bottom: -50px;
+      height: 95px;
+      left: -110px;
+      width: 190px;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .banner-section {
+    &::before {
+      content: none;
+    }
+  }
+}

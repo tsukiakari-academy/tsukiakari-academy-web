@@ -1,0 +1,55 @@
+@import "@scss/palette";
+
+.registration-banner {
+  overflow: hidden;
+  padding: 5px 0 0 0;
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: $pure-white;
+    font-size: 48px;
+    margin-bottom: 0;
+  }
+
+  &__desc {
+    color: $pure-white;
+    line-height: 35px;
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  &__image-wrapper {
+    flex-shrink: 0;
+    margin-left: 10px;
+    width: 450px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .registration-banner {
+    padding: 150px 0;
+
+    &__image-wrapper {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .registration-banner {
+    padding: 120px 0;
+
+    &__title {
+      font-size: 36px;
+    }
+  }
+}
