@@ -1,0 +1,30 @@
+@import "@scss/palette";
+
+.text-field {
+  margin-top: 40px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__input {
+    border: 1px solid $pure-black;
+    border-radius: 8px;
+    font-size: 24px;
+    outline: none;
+    padding: 25px;
+    width: 100%;
+
+    &:focus {
+      border-color: $primary;
+    }
+
+    &::placeholder {
+      color: rgba($pure-black, 0.5);
+    }
+
+    &.textarea {
+      height: 242px;
+    }
+  }
+}
