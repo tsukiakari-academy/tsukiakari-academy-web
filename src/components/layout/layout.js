@@ -1,5 +1,6 @@
 import React from "react"
 
+import { generateClassNames } from "@utils/class-name-generator"
 import { Header, Footer } from "@components"
 
 import "./layout.scss"
@@ -9,13 +10,14 @@ export const Layout = (props) => {
     color,
     children,
     navigation,
-    withoutMenu
+    withoutMenu,
+    home = false
   } = props
 
   return (
     <>
       <Header color={color} navigation={navigation} withoutMenu={withoutMenu} />
-        <main className="main-content">
+        <main className={generateClassNames("main-content", [home && "without-gap"])}>
           {children}
         </main>
       <Footer />

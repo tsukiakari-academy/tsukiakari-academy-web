@@ -10,7 +10,7 @@ export const Header = ({ color, navigation, withoutMenu }) => {
   const mobileBtnEl = useRef()
 
   const onMenuClick = (menuParam) => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 992) {
       resetElementsClasses()
     }
 
@@ -30,7 +30,7 @@ export const Header = ({ color, navigation, withoutMenu }) => {
   }
 
   const mobileButtonClickHandler = () => {
-    if (window.innerWidth > 767 || withoutMenu) return
+    if (window.innerWidth > 991 || withoutMenu) return
 
     mobileBtnEl.current.addEventListener('click', () => {
       mobileBtnEl.current.classList.toggle('active')
@@ -80,6 +80,14 @@ export const Header = ({ color, navigation, withoutMenu }) => {
             onClick={() => onMenuClick('about')}
           >
             About Us
+          </button>
+        </li>
+        <li className="header__navbar-list">
+          <button
+            className="header__navbar-item"
+            onClick={() => onMenuClick('about')}
+          >
+            Contact Us
           </button>
         </li>
       </ul>
@@ -151,7 +159,7 @@ export const Header = ({ color, navigation, withoutMenu }) => {
           {renderNavigation()}
         </div>
 
-        <div className="header__mobile d-md-none">
+        <div className="header__mobile d-lg-none">
           {renderLogo()}
           {renderNavigation(true)}
         </div>
