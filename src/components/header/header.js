@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react"
+import { navigate } from "gatsby"
 
 import { logo } from "@images"
 
@@ -85,7 +86,7 @@ export const Header = ({ color, navigation, withoutMenu }) => {
         <li className="header__navbar-list">
           <button
             className="header__navbar-item"
-            onClick={() => onMenuClick('about')}
+            onClick={() => navigate('/contact')}
           >
             Contact Us
           </button>
