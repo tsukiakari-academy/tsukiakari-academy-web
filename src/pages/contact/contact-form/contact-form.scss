@@ -1,0 +1,84 @@
+@import "@scss/palette";
+
+.contact-form {
+  padding: 200px 0 150px 0;
+
+  &__title {
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+    width: 90%;
+  }
+
+  &__input-area {
+    margin-top: 80px;
+  }
+
+  &__submit {
+    background-color: $secondary;
+    border: none;
+    border-radius: 8px;
+    color: $pure-white;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 40px;
+    padding: 20px 50px;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .contact-form {
+    padding: 150px 0 100px 0;
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__input-area {
+      margin-top: 60px;
+    }
+
+    &__submit {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .contact-form {
+    .container {
+      max-width: 730px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 991px) {
+  .contact-form {
+    &__submit {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .contact-form {
+    padding: 150px 0 100px 0;
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__input-area {
+      margin-top: 60px;
+    }
+
+    &__submit {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  }
+}
