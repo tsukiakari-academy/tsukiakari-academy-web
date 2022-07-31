@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
@@ -9,8 +9,7 @@ import "./talents.scss"
 
 const talents = require("./talents-data.json")
 
-const Talents = ({ setNavigation }) => {
-  const talentRef = useRef()
+const Talents = () => {
   const contentEl = useRef()
   const titleEl = useRef()
   const bioEl = useRef()
@@ -88,12 +87,8 @@ const Talents = ({ setNavigation }) => {
     </div>
   )
 
-  useEffect(() => {
-    setNavigation({ talents: talentRef })
-  }, [setNavigation])
-
   return (
-    <section ref={talentRef} className="talents">
+    <section id="talents" className="talents">
       <div className="container">
         <SectionTitle
           title="Our Talents"

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React from "react"
 
 import { Accordion, SectionTitle } from "@components"
 
@@ -6,15 +6,9 @@ import "./faqs.scss"
 
 const faqs = require("./faqs-data.json")
 
-const Faqs = ({ setNavigation }) => {
-  const faqRef = useRef()
-
-  useEffect(() => {
-    setNavigation({ faqs: faqRef })
-  }, [setNavigation])
-
+const Faqs = () => {
   return (
-    <section ref={faqRef} className="faqs">
+    <section id="faqs" className="faqs">
       <div className="container">
         <SectionTitle
           align="left"
