@@ -2,13 +2,13 @@ import React from "react"
 
 import { Accordion, SectionTitle } from "@components"
 
-import "./faqs.scss"
+import "./registration-faqs.scss"
 
-const faqs = require("./faqs-data.json")
+const registrationFaqs = require("./registration-faqs-data.json")
 
-const Faqs = () => {
+const RegistrationFaqs = () => {
   return (
-    <section id="faqs" className="faqs">
+    <section className="registration-faqs">
       <div className="container">
         <SectionTitle
           align="left"
@@ -23,10 +23,13 @@ const Faqs = () => {
           extraClass="d-lg-none"
         />
 
-        <Accordion data={faqs} extraClass="faqs__wrapper" />
+        <Accordion
+          data={registrationFaqs}
+          extraClass="registration-faqs__wrapper"
+        />
       </div>
     </section>
   )
 }
 
-export default Faqs
+export default RegistrationFaqs

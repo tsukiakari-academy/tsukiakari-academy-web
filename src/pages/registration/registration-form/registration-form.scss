@@ -1,0 +1,155 @@
+@import "@scss/palette";
+
+.registration-form {
+  padding-top: 140px;
+
+  .container {
+    display: flex;
+  }
+
+  &__section-title {
+    text-transform: uppercase;
+  }
+
+  &__input-area {
+    flex: 1;
+  }
+
+  &__submit {
+    background-color: $secondary;
+    border: none;
+    border-radius: 8px;
+    color: $pure-white;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 40px;
+    padding: 20px 50px;
+    text-transform: uppercase;
+  }
+
+  &__schedule {
+    padding-left: 110px;
+  }
+
+  &__schedule-wrapper {
+    list-style: none;
+    margin: 0;
+    margin-top: 60px;
+    padding: 0;
+  }
+
+  &__schedule-item {
+    font-size: 18px;
+    line-height: 35px;
+    padding: 0 0 100px 60px;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+      background-color: $secondary;
+      bottom: 0;
+      content: "";
+      left: 16px;
+      position: absolute;
+      top: 0;
+      width: 2px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    span {
+      background-color: $background;
+      border: 2px solid $secondary;
+      border-radius: 50%;
+      height: 35px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 35px;
+
+      &::before {
+        background-color: $primary;
+        border-radius: 50%;
+        content: "";
+        height: 15px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .registration-form {
+    &__submit {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    &__schedule {
+      padding-left: 60px;
+    }
+
+    &__schedule-wrapper {
+      margin-top: 40px;
+    }
+
+    &__schedule-item {
+      font-size: 16px;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .registration-form {
+    .container {
+      flex-direction: column;
+    }
+
+    &__input-area {
+      order: 2;
+    }
+
+    &__schedule {
+      order: 1;
+      padding-left: 0;
+    }
+
+    &__schedule-item {
+      padding-bottom: 50px;
+    }
+
+    &__submit {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .registration-form {
+    &__submit {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    &__schedule-wrapper {
+      margin-top: 40px;
+    }
+
+    &__schedule-item {
+      font-size: 16px;
+      padding-bottom: 50px;
+    }
+  }
+}

@@ -1,26 +1,44 @@
 import React, { useEffect, useRef } from "react"
+import { navigate } from "gatsby"
 
 import { logo } from "@images"
 
 import "./header.scss"
 
-export const Header = ({ color, navigation, withoutMenu }) => {
+const headerMenu = require("./header-menu.json")
+
+export const Header = ({ color, withoutMenu }) => {
   const headerEl = useRef()
   const navEl = useRef()
   const mobileBtnEl = useRef()
 
-  const onMenuClick = (menuParam) => {
-    if (window.innerWidth < 768) {
+  const scrollToSection = (sectionName) => {
+    const section = document.querySelector(sectionName)
+      section.scrollIntoView({behavior: 'smooth'})
+  }
+
+  const onMenuClick = (sectionName) => {
+    if (window.innerWidth < 992) {
       resetElementsClasses()
     }
 
-    Object.keys(navigation).forEach((menu, index) => {
-      if (menu === menuParam) {
-        Object.values(navigation)[index]
-          .current
-          .scrollIntoView({behavior: 'smooth'})
+    if (sectionName.includes('#')) {
+      if (window.location.pathname === '/') {
+        scrollToSection(sectionName)
+
+        return
       }
-    })
+
+      navigate('/')
+
+      setTimeout(() => {
+        scrollToSection(sectionName)
+      }, 300)
+
+      return
+    }
+
+    navigate(sectionName)
   }
 
   const pageScrollHandler = () => {
@@ -30,7 +48,7 @@ export const Header = ({ color, navigation, withoutMenu }) => {
   }
 
   const mobileButtonClickHandler = () => {
-    if (window.innerWidth > 767 || withoutMenu) return
+    if (window.innerWidth > 991 || withoutMenu) return
 
     mobileBtnEl.current.addEventListener('click', () => {
       mobileBtnEl.current.classList.toggle('active')
@@ -58,30 +76,16 @@ export const Header = ({ color, navigation, withoutMenu }) => {
   const renderMenuNav = () => (
     <>
       <ul className="header__navbar-wrapper">
-        <li className="header__navbar-list">
-          <button
-            className="header__navbar-item"
-            onClick={() => onMenuClick('faqs')}
-          >
-            FAQ
-          </button>
-        </li>
-        <li className="header__navbar-list">
-          <button
-            className="header__navbar-item"
-            onClick={() => onMenuClick('talents')}
-          >
-            Talents
-          </button>
-        </li>
-        <li className="header__navbar-list">
-          <button
-            className="header__navbar-item"
-            onClick={() => onMenuClick('about')}
-          >
-            About Us
-          </button>
-        </li>
+        {headerMenu.map(({ text, section }, index) => (
+          <li key={index} className="header__navbar-list">
+            <button
+              className="header__navbar-item"
+              onClick={() => onMenuClick(section)}
+            >
+              {text}
+            </button>
+          </li>
+        ))}
       </ul>
 
       <button onClick={() => window.location.href='https://bit.ly/TsukiakariApplicationForm'} className="header__navbar-cta">Join Us</button>
@@ -151,7 +155,7 @@ export const Header = ({ color, navigation, withoutMenu }) => {
           {renderNavigation()}
         </div>
 
-        <div className="header__mobile d-md-none">
+        <div className="header__mobile d-lg-none">
           {renderLogo()}
           {renderNavigation(true)}
         </div>
